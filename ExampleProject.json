@@ -1,0 +1,46 @@
+{
+  "ID": "XXX-XXX",
+  "projectType": "Course-Related",
+  "department": "HORT",
+  "courseNumber": "345",
+  "term": "U19",
+  "projectName": "Plant Animation",
+  "projectDescription": "blah blah blah...",
+  "learningObjective": "A student will learn nothing.",
+  "nextSteps": {
+    "<timestamp>": "contact the instructor"
+  },
+  "projectResourceLinks": {
+    "<linkCategory01>": "link",
+    "<linkCategory02>": "link",
+    "<linkCategory03>": "link"
+  },
+  "associates": [
+    {
+      "name": "John Smith",
+      "email": "john.smith@oregonstate.edu",
+      "role": "SME"
+    },
+    {
+      "name": "Jane Doe",
+      "email": "jane.doe@oregonstate.edu",
+      "role": "ID"
+    },
+    {
+      "name": "Nick Harper",
+      "email": "nick.harper@oregonstate.edu",
+      "role": "Developer"
+    }
+  ],
+  "deliverables": [
+    {
+      "name": "concept #1",
+      "type": "Animation",
+      "notes": "stuff and more stuff about the project."
+    },
+    {},
+    {},
+    {}
+  ]
+
+}
