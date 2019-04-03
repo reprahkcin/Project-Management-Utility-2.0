@@ -38,45 +38,45 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(12, 159);
+            this.button11.Location = new System.Drawing.Point(12, 270);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(153, 46);
+            this.button11.Size = new System.Drawing.Size(250, 80);
             this.button11.TabIndex = 39;
             this.button11.Text = "Deploy";
             this.button11.UseVisualStyleBackColor = true;
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(12, 211);
+            this.button10.Location = new System.Drawing.Point(12, 356);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(153, 46);
+            this.button10.Size = new System.Drawing.Size(250, 80);
             this.button10.TabIndex = 38;
             this.button10.Text = "Upload to Kaltura";
             this.button10.UseVisualStyleBackColor = true;
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(12, 263);
+            this.button9.Location = new System.Drawing.Point(12, 442);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(153, 46);
+            this.button9.Size = new System.Drawing.Size(250, 80);
             this.button9.TabIndex = 37;
             this.button9.Text = "YouTube";
             this.button9.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(12, 110);
+            this.button7.Location = new System.Drawing.Point(12, 184);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(153, 43);
+            this.button7.Size = new System.Drawing.Size(250, 80);
             this.button7.TabIndex = 36;
             this.button7.Text = "Push to MCLL";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(12, 61);
+            this.button6.Location = new System.Drawing.Point(12, 98);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(153, 43);
+            this.button6.Size = new System.Drawing.Size(250, 80);
             this.button6.TabIndex = 35;
             this.button6.Text = "Generate Reports";
             this.button6.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             // 
             this.button5.Location = new System.Drawing.Point(12, 12);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(153, 43);
+            this.button5.Size = new System.Drawing.Size(250, 80);
             this.button5.TabIndex = 34;
             this.button5.Text = "Generate Folders";
             this.button5.UseVisualStyleBackColor = true;
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 660);
+            this.ClientSize = new System.Drawing.Size(450, 687);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);

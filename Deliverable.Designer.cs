@@ -46,6 +46,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox9
@@ -199,7 +200,7 @@
             this.textBox1.Location = new System.Drawing.Point(13, 309);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(708, 311);
+            this.textBox1.Size = new System.Drawing.Size(708, 276);
             this.textBox1.TabIndex = 27;
             this.textBox1.Text = "Notes and Discovery...";
             // 
@@ -246,11 +247,20 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Due Date:";
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(12, 591);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(709, 26);
+            this.textBox8.TabIndex = 33;
+            this.textBox8.Text = "Final Link";
+            // 
             // Deliverable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 639);
+            this.ClientSize = new System.Drawing.Size(983, 636);
+            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dateTimePicker1);
@@ -295,5 +305,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }

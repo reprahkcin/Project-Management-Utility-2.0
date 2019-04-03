@@ -1,5 +1,6 @@
 {
   "ID": "XXX-XXX",
+  "projectStatus": "Ready for Action",
   "projectType": "Course-Related",
   "department": "HORT",
   "courseNumber": "345",
@@ -7,40 +8,106 @@
   "projectName": "Plant Animation",
   "projectDescription": "blah blah blah...",
   "learningObjective": "A student will learn nothing.",
-  "nextSteps": {
-    "<timestamp>": "contact the instructor"
-  },
   "projectResourceLinks": {
     "<linkCategory01>": "link",
     "<linkCategory02>": "link",
     "<linkCategory03>": "link"
   },
+  "nextSteps": {
+    "<timestamp>": "contact the instructor"
+  },
   "associates": [
     {
       "name": "John Smith",
       "email": "john.smith@oregonstate.edu",
-      "role": "SME"
+      "role": "SME",
+      "notes": "Terrible person"
     },
     {
       "name": "Jane Doe",
       "email": "jane.doe@oregonstate.edu",
-      "role": "ID"
+      "role": "ID",
+      "notes": "on vacation until the 10th"
     },
     {
       "name": "Nick Harper",
       "email": "nick.harper@oregonstate.edu",
-      "role": "Developer"
+      "role": "Developer",
+      "notes": "such a friendly and capable person. No complaints."
     }
   ],
   "deliverables": [
     {
       "name": "concept #1",
-      "type": "Animation",
-      "notes": "stuff and more stuff about the project."
+      "notes": "stuff and more stuff about the project.",
+      "description": "Bomb ass animation",
+      "mediaType": "Animation",
+      "deliverableResourceLinks": {
+        "<linkCategory01>": "link",
+        "<linkCategory02>": "link"
+      },
+      "dueDate": "<pickerValue>",
+      "status": "Ready",
+      "quantity": 4,
+      "estimatedTimePer": "7 hours",
+      "accessibility": "Captioned",
+      "teamResponsible": "Custom",
+      "finalLink": "link"
     },
-    {},
-    {},
-    {}
-  ]
-
+    {
+      "name": "concept #1",
+      "description": "Bomb ass animation",
+      "mediaType": "Animation",
+      "notes": "stuff and more stuff about the project.",
+      "deliverableResourceLinks": {
+        "<linkCategory01>": "link",
+        "<linkCategory02>": "link"
+      },
+      "dueDate": "<pickerValue>",
+      "status": "Ready",
+      "quantity": 4,
+      "estimatedTimePer": "7 hours",
+      "accessibility": "Captioned",
+      "teamResponsible": "Custom",
+      "finalLink": "link"
+    },
+    {
+      "name": "concept #1",
+      "description": "Bomb ass animation",
+      "mediaType": "Animation",
+      "notes": "stuff and more stuff about the project.",
+      "deliverableResourceLinks": {
+        "<linkCategory01>": "link",
+        "<linkCategory02>": "link"
+      },
+      "dueDate": "<pickerValue>",
+      "status": "Ready",
+      "quantity": 4,
+      "estimatedTimePer": "7 hours",
+      "accessibility": "Captioned",
+      "teamResponsible": "Custom",
+      "finalLink": "link"
+    },
+    {
+      "name": "concept #1",
+      "description": "Bomb ass animation",
+      "mediaType": "Animation",
+      "notes": "stuff and more stuff about the project.",
+      "deliverableResourceLinks": {
+        "<linkCategory01>": "link",
+        "<linkCategory02>": "link"
+      },
+      "dueDate": "<pickerValue>",
+      "status": "Ready",
+      "quantity": 4,
+      "estimatedTimePer": "7 hours",
+      "accessibility": "Captioned",
+      "teamResponsible": "Custom",
+      "finalLink": "link"
+    }
+  ],
+  "timestamps": {
+    "creation": "<date>",
+    "completed": "<date>"
+  }
 }

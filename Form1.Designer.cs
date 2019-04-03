@@ -51,17 +51,16 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.department_textBox = new System.Windows.Forms.TextBox();
-            this.courseNumber_textBox = new System.Windows.Forms.TextBox();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.term = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.num_deliverables = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.department_textBox = new System.Windows.Forms.TextBox();
+            this.courseNumber_textBox = new System.Windows.Forms.TextBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,7 +68,7 @@
             // 
             // projectName_textBox
             // 
-            this.projectName_textBox.Location = new System.Drawing.Point(13, 42);
+            this.projectName_textBox.Location = new System.Drawing.Point(13, 52);
             this.projectName_textBox.Name = "projectName_textBox";
             this.projectName_textBox.Size = new System.Drawing.Size(682, 26);
             this.projectName_textBox.TabIndex = 5;
@@ -77,7 +76,7 @@
             // 
             // projectDescription_textBox
             // 
-            this.projectDescription_textBox.Location = new System.Drawing.Point(13, 78);
+            this.projectDescription_textBox.Location = new System.Drawing.Point(13, 88);
             this.projectDescription_textBox.Multiline = true;
             this.projectDescription_textBox.Name = "projectDescription_textBox";
             this.projectDescription_textBox.Size = new System.Drawing.Size(682, 520);
@@ -87,7 +86,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Location = new System.Drawing.Point(13, 875);
+            this.groupBox1.Location = new System.Drawing.Point(13, 885);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1000, 80);
             this.groupBox1.TabIndex = 7;
@@ -108,7 +107,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(710, 556);
+            this.label1.Location = new System.Drawing.Point(15, 412);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 40);
             this.label1.TabIndex = 8;
@@ -125,7 +124,7 @@
             // 
             // learningObjective_textBox
             // 
-            this.learningObjective_textBox.Location = new System.Drawing.Point(13, 609);
+            this.learningObjective_textBox.Location = new System.Drawing.Point(13, 619);
             this.learningObjective_textBox.Multiline = true;
             this.learningObjective_textBox.Name = "learningObjective_textBox";
             this.learningObjective_textBox.Size = new System.Drawing.Size(682, 70);
@@ -136,7 +135,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(705, 5);
+            this.label3.Location = new System.Drawing.Point(705, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(217, 25);
             this.label3.TabIndex = 11;
@@ -144,7 +143,7 @@
             // 
             // term_textBox
             // 
-            this.term_textBox.Location = new System.Drawing.Point(616, 4);
+            this.term_textBox.Location = new System.Drawing.Point(616, 14);
             this.term_textBox.Name = "term_textBox";
             this.term_textBox.Size = new System.Drawing.Size(79, 26);
             this.term_textBox.TabIndex = 4;
@@ -152,7 +151,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Location = new System.Drawing.Point(13, 964);
+            this.groupBox2.Location = new System.Drawing.Point(13, 974);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1000, 80);
             this.groupBox2.TabIndex = 17;
@@ -163,7 +162,7 @@
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(19, 989);
+            this.button4.Location = new System.Drawing.Point(19, 999);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(223, 36);
             this.button4.TabIndex = 17;
@@ -176,10 +175,11 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Location = new System.Drawing.Point(706, 80);
+            this.groupBox3.Location = new System.Drawing.Point(706, 90);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(311, 464);
+            this.groupBox3.Size = new System.Drawing.Size(311, 790);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Timestamps";
@@ -236,7 +236,7 @@
             "Approval Pending",
             "Revisions Pending",
             "Late"});
-            this.projectStatus_comboBox.Location = new System.Drawing.Point(705, 42);
+            this.projectStatus_comboBox.Location = new System.Drawing.Point(705, 52);
             this.projectStatus_comboBox.Name = "projectStatus_comboBox";
             this.projectStatus_comboBox.Size = new System.Drawing.Size(312, 28);
             this.projectStatus_comboBox.TabIndex = 6;
@@ -252,7 +252,7 @@
             "Internal - SHORT TERM",
             "Internal - LONG TERM",
             "Miscellaneous"});
-            this.projectType_comboBox.Location = new System.Drawing.Point(13, 4);
+            this.projectType_comboBox.Location = new System.Drawing.Point(13, 14);
             this.projectType_comboBox.Name = "projectType_comboBox";
             this.projectType_comboBox.Size = new System.Drawing.Size(271, 28);
             this.projectType_comboBox.TabIndex = 1;
@@ -260,7 +260,7 @@
             // 
             // nextSteps_textBox
             // 
-            this.nextSteps_textBox.Location = new System.Drawing.Point(12, 690);
+            this.nextSteps_textBox.Location = new System.Drawing.Point(12, 700);
             this.nextSteps_textBox.Multiline = true;
             this.nextSteps_textBox.Name = "nextSteps_textBox";
             this.nextSteps_textBox.Size = new System.Drawing.Size(683, 70);
@@ -278,7 +278,7 @@
             "TeamGantt Link",
             "Jira Link",
             "Reference Link"});
-            this.comboBox10.Location = new System.Drawing.Point(454, 770);
+            this.comboBox10.Location = new System.Drawing.Point(454, 780);
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(241, 28);
             this.comboBox10.TabIndex = 11;
@@ -286,7 +286,7 @@
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(12, 770);
+            this.textBox11.Location = new System.Drawing.Point(12, 780);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(436, 26);
             this.textBox11.TabIndex = 10;
@@ -294,7 +294,7 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(12, 806);
+            this.textBox10.Location = new System.Drawing.Point(12, 816);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(436, 26);
             this.textBox10.TabIndex = 12;
@@ -308,75 +308,11 @@
             this.term,
             this.status,
             this.num_deliverables});
-            this.dataGridView1.Location = new System.Drawing.Point(1047, 42);
+            this.dataGridView1.Location = new System.Drawing.Point(1047, 52);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(645, 1027);
             this.dataGridView1.TabIndex = 32;
-            // 
-            // department_textBox
-            // 
-            this.department_textBox.Location = new System.Drawing.Point(291, 4);
-            this.department_textBox.Name = "department_textBox";
-            this.department_textBox.Size = new System.Drawing.Size(227, 26);
-            this.department_textBox.TabIndex = 2;
-            this.department_textBox.Text = "Department";
-            // 
-            // courseNumber_textBox
-            // 
-            this.courseNumber_textBox.Location = new System.Drawing.Point(524, 4);
-            this.courseNumber_textBox.Name = "courseNumber_textBox";
-            this.courseNumber_textBox.Size = new System.Drawing.Size(86, 26);
-            this.courseNumber_textBox.TabIndex = 3;
-            this.courseNumber_textBox.Text = "Course #";
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(706, 609);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 36;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(12, 842);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(436, 26);
-            this.textBox5.TabIndex = 14;
-            this.textBox5.Text = "Project Resources Link";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Shared",
-            "Source Files",
-            "Misc. Resources",
-            "Asana Link",
-            "TeamGantt Link",
-            "Jira Link",
-            "Reference Link"});
-            this.comboBox1.Location = new System.Drawing.Point(454, 842);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(241, 28);
-            this.comboBox1.TabIndex = 15;
-            this.comboBox1.Text = "Link Category";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Shared",
-            "Source Files",
-            "Misc. Resources",
-            "Asana Link",
-            "TeamGantt Link",
-            "Jira Link",
-            "Reference Link"});
-            this.comboBox2.Location = new System.Drawing.Point(454, 806);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(241, 28);
-            this.comboBox2.TabIndex = 13;
-            this.comboBox2.Text = "Link Category";
             // 
             // name
             // 
@@ -399,6 +335,64 @@
             this.num_deliverables.HeaderText = "# of Del.";
             this.num_deliverables.Name = "num_deliverables";
             // 
+            // department_textBox
+            // 
+            this.department_textBox.Location = new System.Drawing.Point(291, 14);
+            this.department_textBox.Name = "department_textBox";
+            this.department_textBox.Size = new System.Drawing.Size(227, 26);
+            this.department_textBox.TabIndex = 2;
+            this.department_textBox.Text = "Department";
+            // 
+            // courseNumber_textBox
+            // 
+            this.courseNumber_textBox.Location = new System.Drawing.Point(524, 14);
+            this.courseNumber_textBox.Name = "courseNumber_textBox";
+            this.courseNumber_textBox.Size = new System.Drawing.Size(86, 26);
+            this.courseNumber_textBox.TabIndex = 3;
+            this.courseNumber_textBox.Text = "Course #";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(12, 852);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(436, 26);
+            this.textBox5.TabIndex = 14;
+            this.textBox5.Text = "Project Resources Link";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Shared",
+            "Source Files",
+            "Misc. Resources",
+            "Asana Link",
+            "TeamGantt Link",
+            "Jira Link",
+            "Reference Link"});
+            this.comboBox1.Location = new System.Drawing.Point(454, 852);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(241, 28);
+            this.comboBox1.TabIndex = 15;
+            this.comboBox1.Text = "Link Category";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Shared",
+            "Source Files",
+            "Misc. Resources",
+            "Asana Link",
+            "TeamGantt Link",
+            "Jira Link",
+            "Reference Link"});
+            this.comboBox2.Location = new System.Drawing.Point(454, 816);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(241, 28);
+            this.comboBox2.TabIndex = 13;
+            this.comboBox2.Text = "Link Category";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -408,9 +402,7 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.courseNumber_textBox);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.department_textBox);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox10);
@@ -467,7 +459,6 @@
         private System.Windows.Forms.TextBox department_textBox;
         private System.Windows.Forms.TextBox courseNumber_textBox;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
