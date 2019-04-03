@@ -1,0 +1,77 @@
+﻿Project
+	
+	ID
+	Name
+	Description
+
+	Stakeholder
+	Stakeholder Email
+
+	Instructional Designer
+	Developer
+
+	Resources
+	Shared Resources
+	
+	Type of project
+		Animation
+		Unity
+		VR
+		AR
+		Graphic
+		Miscellaneous 
+
+	
+	Timestamps
+		Creation
+		Work Start
+		Cancelled
+		Hold
+		Contacted SME
+		Met with SME
+		Completed
+		Extended
+		Due Date
+		Extended Due Date
+		Archived
+
+
+Internal
+	
+	Long-term
+	
+	Short-term
+
+Course
+	Department
+	Course Number
+	Term to Launch
+	Learning Objective
+
+
+	Refresh	
+
+	Hot-fix
+
+
+
+
+
+
+Metrics for Victor
+---------------------------
+
+Total number of projects
+Type of project
+	Animation
+	Unity
+	VR
+	AR
+
+How many canceled and date
+Date of project intake
+Date project started work
+Date of delivery
+Final link
+Developer/Videographer worked on project
+Notes or issues
