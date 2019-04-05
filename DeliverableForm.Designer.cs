@@ -1,6 +1,6 @@
 ﻿namespace Project_Management_Utility_2._0
 {
-    partial class Deliverable
+    partial class DeliverableForm
     {
         /// <summary>
         /// Required designer variable.

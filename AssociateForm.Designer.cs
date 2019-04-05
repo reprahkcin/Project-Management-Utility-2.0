@@ -1,6 +1,6 @@
 ﻿namespace Project_Management_Utility_2._0
 {
-    partial class Associate
+    partial class AssociateForm
     {
         /// <summary>
         /// Required designer variable.

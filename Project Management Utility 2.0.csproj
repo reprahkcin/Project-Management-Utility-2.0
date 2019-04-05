@@ -46,42 +46,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Associate.cs">
+    <Compile Include="Associate.cs" />
+    <Compile Include="AssociateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Associate.Designer.cs">
-      <DependentUpon>Associate.cs</DependentUpon>
+    <Compile Include="AssociateForm.Designer.cs">
+      <DependentUpon>AssociateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Deliverable.cs">
+    <Compile Include="Deliverable.cs" />
+    <Compile Include="DeliverableForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Deliverable.Designer.cs">
-      <DependentUpon>Deliverable.cs</DependentUpon>
+    <Compile Include="DeliverableForm.Designer.cs">
+      <DependentUpon>DeliverableForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="ProjectCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities.cs">
+    <Compile Include="Timestamp.cs" />
+    <Compile Include="UtilitiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Utilities.Designer.cs">
-      <DependentUpon>Utilities.cs</DependentUpon>
+    <Compile Include="UtilitiesForm.Designer.cs">
+      <DependentUpon>UtilitiesForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Associate.resx">
-      <DependentUpon>Associate.cs</DependentUpon>
+    <EmbeddedResource Include="AssociateForm.resx">
+      <DependentUpon>AssociateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Deliverable.resx">
-      <DependentUpon>Deliverable.cs</DependentUpon>
+    <EmbeddedResource Include="DeliverableForm.resx">
+      <DependentUpon>DeliverableForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,8 +95,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Utilities.resx">
-      <DependentUpon>Utilities.cs</DependentUpon>
+    <EmbeddedResource Include="UtilitiesForm.resx">
+      <DependentUpon>UtilitiesForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ExampleProject.json" />
     <None Include="Properties\Settings.settings">
