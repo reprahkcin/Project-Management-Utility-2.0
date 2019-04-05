@@ -60,6 +60,7 @@
     <Compile Include="DeliverableForm.Designer.cs">
       <DependentUpon>DeliverableForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Link.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +72,7 @@
     <Compile Include="ProjectCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Timestamp.cs" />
+    <Compile Include="Update.cs" />
     <Compile Include="UtilitiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
