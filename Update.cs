@@ -1,40 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Project_Management_Utility_2._0
+﻿namespace Project_Management_Utility_2._0
 {
-    class Update
+    public class Update
     {
-        private string note;
-        private Timestamp time;
-        private string followUp;
+        public string note;
+        public Timestamp time;
+        public string nextSteps;
 
-        public Update(string Note, Timestamp Time)
+        public Update()
         {
-            this.note = Note;
-            this.time = Time;
-            this.followUp = FollowUp;
+            time = new Timestamp("Update");
         }
 
-        public string Note
+        public Update(string Note, string NextSteps)
         {
-            get { return note; }
-            set { note = value; }
+            note = Note;
+            time = new Timestamp("Update");
+            nextSteps = NextSteps;
         }
 
-        public Timestamp Time
-        {
-            get { return time; }
-            set { time = value; }
-        }
-
-        public string FollowUp
-        {
-            get { return followUp; }
-            set { followUp = value; }
-        }
     }
 }

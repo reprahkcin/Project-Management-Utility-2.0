@@ -1,32 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Project_Management_Utility_2._0
 {
-    class Timestamp
+    public class Timestamp
     {
-        private string time;
-        private string type;
+        public DateTime time;
+        public string stampType;
 
-        public Timestamp(string Time, string Type)
+
+        public Timestamp(string StampType)
         {
-            this.time = Time;
-            this.type = Type;
+            this.time = DateTime.Now;
+            this.stampType = StampType;
         }
 
-        public string Time
-        {
-            get { return time; }
-            set { time = value; }
-        }
-
-        public string Type1
-        {
-            get { return type; }
-            set { type = value; }
-        }
     }
 }

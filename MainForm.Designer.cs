@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.projectName_textBox = new System.Windows.Forms.TextBox();
             this.projectDescription_textBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.associateName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.associateEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,100 +44,105 @@
             this.projectID_displayText = new System.Windows.Forms.Label();
             this.term_textBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mediaType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deliverableName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addDeliverable_btn = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeEvent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectStatus_comboBox = new System.Windows.Forms.ComboBox();
             this.projectType_comboBox = new System.Windows.Forms.ComboBox();
-            this.nextSteps_textBox = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.collectionDepartment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.collectionCourseNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.leadDeveloper = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.department_textBox = new System.Windows.Forms.TextBox();
             this.courseNumber_textBox = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.url = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isShared = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addLink_btn = new System.Windows.Forms.Button();
-            this.update_btn = new System.Windows.Forms.Button();
             this.projectPriority_comboBox = new System.Windows.Forms.ComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.ProjectDueDate = new System.Windows.Forms.DateTimePicker();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.actionTaken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.details = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddUpdate_btn = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.projectId = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.collectionPath = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.department = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.due = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.load = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updateBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // projectName_textBox
             // 
-            this.projectName_textBox.Location = new System.Drawing.Point(13, 88);
+            this.projectName_textBox.Location = new System.Drawing.Point(12, 13);
             this.projectName_textBox.Name = "projectName_textBox";
-            this.projectName_textBox.Size = new System.Drawing.Size(682, 26);
+            this.projectName_textBox.Size = new System.Drawing.Size(403, 26);
             this.projectName_textBox.TabIndex = 7;
             this.projectName_textBox.Text = "Project Name";
+            this.projectName_textBox.TextChanged += new System.EventHandler(this.ProjectName_textBox_TextChanged);
             // 
             // projectDescription_textBox
             // 
-            this.projectDescription_textBox.Location = new System.Drawing.Point(12, 147);
+            this.projectDescription_textBox.Location = new System.Drawing.Point(11, 207);
             this.projectDescription_textBox.Multiline = true;
             this.projectDescription_textBox.Name = "projectDescription_textBox";
-            this.projectDescription_textBox.Size = new System.Drawing.Size(682, 210);
+            this.projectDescription_textBox.Size = new System.Drawing.Size(876, 235);
             this.projectDescription_textBox.TabIndex = 9;
             this.projectDescription_textBox.Text = "Project Description...";
+            this.projectDescription_textBox.TextChanged += new System.EventHandler(this.ProjectDescription_textBox_TextChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.dataGridView4);
             this.groupBox1.Controls.Add(this.addAssociate_btn);
-            this.groupBox1.Location = new System.Drawing.Point(13, 1093);
+            this.groupBox1.Location = new System.Drawing.Point(894, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1004, 280);
+            this.groupBox1.Size = new System.Drawing.Size(781, 296);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Associates";
+            // 
+            // button7
+            // 
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(379, 254);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(212, 36);
+            this.button7.TabIndex = 19;
+            this.button7.Text = "Remove Associate";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // dataGridView4
             // 
@@ -148,7 +154,7 @@
             this.dataGridView4.Location = new System.Drawing.Point(7, 26);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowTemplate.Height = 28;
-            this.dataGridView4.Size = new System.Drawing.Size(991, 201);
+            this.dataGridView4.Size = new System.Drawing.Size(768, 222);
             this.dataGridView4.TabIndex = 17;
             // 
             // associateName
@@ -173,21 +179,22 @@
             // 
             this.addAssociate_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addAssociate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addAssociate_btn.Location = new System.Drawing.Point(842, 233);
+            this.addAssociate_btn.Location = new System.Drawing.Point(597, 254);
             this.addAssociate_btn.Name = "addAssociate_btn";
-            this.addAssociate_btn.Size = new System.Drawing.Size(156, 36);
+            this.addAssociate_btn.Size = new System.Drawing.Size(178, 36);
             this.addAssociate_btn.TabIndex = 13;
             this.addAssociate_btn.Text = "Add Associate";
             this.addAssociate_btn.UseVisualStyleBackColor = true;
             // 
             // learningObjective_textBox
             // 
-            this.learningObjective_textBox.Location = new System.Drawing.Point(13, 363);
+            this.learningObjective_textBox.Location = new System.Drawing.Point(12, 119);
             this.learningObjective_textBox.Multiline = true;
             this.learningObjective_textBox.Name = "learningObjective_textBox";
-            this.learningObjective_textBox.Size = new System.Drawing.Size(682, 70);
+            this.learningObjective_textBox.Size = new System.Drawing.Size(875, 78);
             this.learningObjective_textBox.TabIndex = 10;
             this.learningObjective_textBox.Text = "Learning Objective...";
+            this.learningObjective_textBox.TextChanged += new System.EventHandler(this.LearningObjective_textBox_TextChanged);
             // 
             // projectID_displayText
             // 
@@ -198,29 +205,38 @@
             this.projectID_displayText.Size = new System.Drawing.Size(0, 20);
             this.projectID_displayText.TabIndex = 11;
             this.projectID_displayText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            
             // 
             // term_textBox
             // 
-            this.term_textBox.Location = new System.Drawing.Point(337, 52);
+            this.term_textBox.Location = new System.Drawing.Point(336, 48);
             this.term_textBox.Name = "term_textBox";
             this.term_textBox.Size = new System.Drawing.Size(79, 26);
             this.term_textBox.TabIndex = 5;
             this.term_textBox.Text = "Term";
+            this.term_textBox.TextChanged += new System.EventHandler(this.Term_textBox_TextChanged);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.dataGridView3);
             this.groupBox2.Controls.Add(this.addDeliverable_btn);
-            this.groupBox2.Location = new System.Drawing.Point(12, 786);
+            this.groupBox2.Location = new System.Drawing.Point(12, 448);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1005, 301);
+            this.groupBox2.Size = new System.Drawing.Size(876, 304);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Deliverables";
+            // 
+            // button4
+            // 
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(493, 254);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(212, 36);
+            this.button4.TabIndex = 20;
+            this.button4.Text = "Remove Deliverable";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
             // 
@@ -233,7 +249,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(6, 26);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 28;
-            this.dataGridView3.Size = new System.Drawing.Size(993, 222);
+            this.dataGridView3.Size = new System.Drawing.Size(861, 222);
             this.dataGridView3.TabIndex = 18;
             // 
             // qty
@@ -264,48 +280,13 @@
             // 
             this.addDeliverable_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addDeliverable_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addDeliverable_btn.Location = new System.Drawing.Point(843, 254);
+            this.addDeliverable_btn.Location = new System.Drawing.Point(711, 254);
             this.addDeliverable_btn.Name = "addDeliverable_btn";
             this.addDeliverable_btn.Size = new System.Drawing.Size(156, 36);
             this.addDeliverable_btn.TabIndex = 12;
             this.addDeliverable_btn.Text = "Add Deliverable";
             this.addDeliverable_btn.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dataGridView5);
-            this.groupBox3.Location = new System.Drawing.Point(706, 131);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(311, 302);
-            this.groupBox3.TabIndex = 19;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "History";
-            // 
-            // dataGridView5
-            // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.time,
-            this.timeEvent});
-            this.dataGridView5.Location = new System.Drawing.Point(7, 26);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowTemplate.Height = 28;
-            this.dataGridView5.Size = new System.Drawing.Size(298, 270);
-            this.dataGridView5.TabIndex = 0;
-            // 
-            // time
-            // 
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.time.DefaultCellStyle = dataGridViewCellStyle1;
-            this.time.HeaderText = "Time";
-            this.time.Name = "time";
-            // 
-            // timeEvent
-            // 
-            this.timeEvent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.timeEvent.HeaderText = "Event";
-            this.timeEvent.Name = "timeEvent";
+            this.addDeliverable_btn.Click += new System.EventHandler(this.AddDeliverable_btn_Click);
             // 
             // projectStatus_comboBox
             // 
@@ -323,11 +304,12 @@
             "Approval Pending",
             "Revisions Pending",
             "Late"});
-            this.projectStatus_comboBox.Location = new System.Drawing.Point(422, 50);
+            this.projectStatus_comboBox.Location = new System.Drawing.Point(421, 13);
             this.projectStatus_comboBox.Name = "projectStatus_comboBox";
             this.projectStatus_comboBox.Size = new System.Drawing.Size(273, 28);
             this.projectStatus_comboBox.TabIndex = 6;
             this.projectStatus_comboBox.Text = "Status";
+            this.projectStatus_comboBox.SelectedIndexChanged += new System.EventHandler(this.ProjectStatus_comboBox_SelectedIndexChanged);
             // 
             // projectType_comboBox
             // 
@@ -339,107 +321,53 @@
             "Internal - SHORT TERM",
             "Internal - LONG TERM",
             "Miscellaneous"});
-            this.projectType_comboBox.Location = new System.Drawing.Point(15, 13);
+            this.projectType_comboBox.Location = new System.Drawing.Point(12, 82);
             this.projectType_comboBox.Name = "projectType_comboBox";
             this.projectType_comboBox.Size = new System.Drawing.Size(271, 28);
             this.projectType_comboBox.TabIndex = 1;
             this.projectType_comboBox.Text = "Project Type";
-            // 
-            // nextSteps_textBox
-            // 
-            this.nextSteps_textBox.Location = new System.Drawing.Point(12, 1379);
-            this.nextSteps_textBox.Multiline = true;
-            this.nextSteps_textBox.Name = "nextSteps_textBox";
-            this.nextSteps_textBox.Size = new System.Drawing.Size(457, 262);
-            this.nextSteps_textBox.TabIndex = 14;
-            this.nextSteps_textBox.Text = "What\'s Next?";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.collectionDepartment,
-            this.collectionCourseNumber,
-            this.name,
-            this.dueDate,
-            this.status,
-            this.priority,
-            this.leadDeveloper});
-            this.dataGridView1.Location = new System.Drawing.Point(1035, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1178, 728);
-            this.dataGridView1.TabIndex = 32;
-            // 
-            // collectionDepartment
-            // 
-            this.collectionDepartment.HeaderText = "Department";
-            this.collectionDepartment.Name = "collectionDepartment";
-            this.collectionDepartment.Width = 125;
-            // 
-            // collectionCourseNumber
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.collectionCourseNumber.DefaultCellStyle = dataGridViewCellStyle2;
-            this.collectionCourseNumber.HeaderText = "#";
-            this.collectionCourseNumber.Name = "collectionCourseNumber";
-            this.collectionCourseNumber.Width = 50;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.HeaderText = "Project Name";
-            this.name.Name = "name";
-            // 
-            // dueDate
-            // 
-            this.dueDate.HeaderText = "Due";
-            this.dueDate.Name = "dueDate";
-            // 
-            // status
-            // 
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            // 
-            // priority
-            // 
-            this.priority.HeaderText = "Priority";
-            this.priority.Name = "priority";
-            // 
-            // leadDeveloper
-            // 
-            this.leadDeveloper.HeaderText = "Lead Developer";
-            this.leadDeveloper.Name = "leadDeveloper";
-            this.leadDeveloper.Width = 200;
+            this.projectType_comboBox.SelectedIndexChanged += new System.EventHandler(this.ProjectType_comboBox_SelectedIndexChanged);
             // 
             // department_textBox
             // 
-            this.department_textBox.Location = new System.Drawing.Point(12, 52);
+            this.department_textBox.Location = new System.Drawing.Point(12, 48);
             this.department_textBox.Name = "department_textBox";
             this.department_textBox.Size = new System.Drawing.Size(227, 26);
             this.department_textBox.TabIndex = 3;
             this.department_textBox.Text = "Department";
+            this.department_textBox.TextChanged += new System.EventHandler(this.Department_textBox_TextChanged);
             // 
             // courseNumber_textBox
             // 
-            this.courseNumber_textBox.Location = new System.Drawing.Point(245, 52);
+            this.courseNumber_textBox.Location = new System.Drawing.Point(245, 48);
             this.courseNumber_textBox.Name = "courseNumber_textBox";
             this.courseNumber_textBox.Size = new System.Drawing.Size(86, 26);
             this.courseNumber_textBox.TabIndex = 4;
             this.courseNumber_textBox.Text = "Course #";
+            this.courseNumber_textBox.TextChanged += new System.EventHandler(this.CourseNumber_textBox_TextChanged);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.dataGridView2);
             this.groupBox4.Controls.Add(this.addLink_btn);
-            this.groupBox4.Location = new System.Drawing.Point(12, 439);
+            this.groupBox4.Location = new System.Drawing.Point(11, 761);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1005, 341);
+            this.groupBox4.Size = new System.Drawing.Size(877, 231);
             this.groupBox4.TabIndex = 17;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Links";
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(494, 185);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(212, 36);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Remove Link";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -451,7 +379,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(6, 25);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(993, 259);
+            this.dataGridView2.Size = new System.Drawing.Size(862, 154);
             this.dataGridView2.TabIndex = 17;
             // 
             // url
@@ -475,23 +403,13 @@
             // 
             this.addLink_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addLink_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addLink_btn.Location = new System.Drawing.Point(843, 290);
+            this.addLink_btn.Location = new System.Drawing.Point(712, 185);
             this.addLink_btn.Name = "addLink_btn";
             this.addLink_btn.Size = new System.Drawing.Size(156, 36);
             this.addLink_btn.TabIndex = 11;
             this.addLink_btn.Text = "Add Link";
             this.addLink_btn.UseVisualStyleBackColor = true;
-            // 
-            // update_btn
-            // 
-            this.update_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_btn.Location = new System.Drawing.Point(322, 1647);
-            this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(147, 51);
-            this.update_btn.TabIndex = 15;
-            this.update_btn.Text = "Update";
-            this.update_btn.UseVisualStyleBackColor = true;
+            this.addLink_btn.Click += new System.EventHandler(this.AddLink_btn_Click);
             // 
             // projectPriority_comboBox
             // 
@@ -509,9 +427,9 @@
             "Approval Pending",
             "Revisions Pending",
             "Late"});
-            this.projectPriority_comboBox.Location = new System.Drawing.Point(705, 88);
+            this.projectPriority_comboBox.Location = new System.Drawing.Point(700, 13);
             this.projectPriority_comboBox.Name = "projectPriority_comboBox";
-            this.projectPriority_comboBox.Size = new System.Drawing.Size(312, 28);
+            this.projectPriority_comboBox.Size = new System.Drawing.Size(188, 28);
             this.projectPriority_comboBox.TabIndex = 8;
             this.projectPriority_comboBox.Text = "Priority";
             // 
@@ -520,9 +438,9 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1701);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1446);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(2225, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(1683, 30);
             this.statusStrip1.TabIndex = 34;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -536,194 +454,230 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(292, 13);
+            this.label1.Location = new System.Drawing.Point(421, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 25);
             this.label1.TabIndex = 36;
             this.label1.Text = "Due Date:";
             // 
-            // dateTimePicker
+            // ProjectDueDate
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(398, 14);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(296, 26);
-            this.dateTimePicker.TabIndex = 2;
+            this.ProjectDueDate.Location = new System.Drawing.Point(527, 48);
+            this.ProjectDueDate.Name = "ProjectDueDate";
+            this.ProjectDueDate.Size = new System.Drawing.Size(361, 26);
+            this.ProjectDueDate.TabIndex = 2;
+            this.ProjectDueDate.ValueChanged += new System.EventHandler(this.DateTimePicker_ValueChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.AddUpdate_btn);
+            this.groupBox3.Location = new System.Drawing.Point(10, 1009);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(877, 231);
+            this.groupBox3.TabIndex = 20;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Updates";
             // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(681, 290);
+            this.button1.Location = new System.Drawing.Point(494, 185);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 36);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Edit Link";
+            this.button1.Size = new System.Drawing.Size(212, 36);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Remove Update";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // dataGridView1
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(463, 290);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(212, 36);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Remove Link";
-            this.button2.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.date,
+            this.actionTaken,
+            this.details});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 25);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(862, 154);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            // 
+            // actionTaken
+            // 
+            this.actionTaken.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.actionTaken.HeaderText = "Action Taken";
+            this.actionTaken.Name = "actionTaken";
+            // 
+            // details
+            // 
+            this.details.HeaderText = "More Details";
+            this.details.Name = "details";
+            // 
+            // AddUpdate_btn
+            // 
+            this.AddUpdate_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddUpdate_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddUpdate_btn.Location = new System.Drawing.Point(712, 185);
+            this.AddUpdate_btn.Name = "AddUpdate_btn";
+            this.AddUpdate_btn.Size = new System.Drawing.Size(156, 36);
+            this.AddUpdate_btn.TabIndex = 11;
+            this.AddUpdate_btn.Text = "Add Update";
+            this.AddUpdate_btn.UseVisualStyleBackColor = true;
+            this.AddUpdate_btn.Click += new System.EventHandler(this.AddUpdate_btn_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.button3);
+            this.groupBox5.Controls.Add(this.collectionPath);
+            this.groupBox5.Controls.Add(this.button5);
+            this.groupBox5.Controls.Add(this.dataGridView5);
+            this.groupBox5.Location = new System.Drawing.Point(894, 324);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(781, 916);
+            this.groupBox5.TabIndex = 20;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Projects";
             // 
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(681, 254);
+            this.button3.Location = new System.Drawing.Point(7, 870);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(156, 36);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Edit Deliverable";
+            this.button3.Size = new System.Drawing.Size(78, 40);
+            this.button3.TabIndex = 38;
+            this.button3.Text = "Browse";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // button4
+            // collectionPath
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(463, 254);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(212, 36);
-            this.button4.TabIndex = 20;
-            this.button4.Text = "Remove Deliverable";
-            this.button4.UseVisualStyleBackColor = true;
+            this.collectionPath.Location = new System.Drawing.Point(91, 875);
+            this.collectionPath.Name = "collectionPath";
+            this.collectionPath.Size = new System.Drawing.Size(466, 26);
+            this.collectionPath.TabIndex = 37;
+            this.collectionPath.Text = "Collection Path";
+            this.collectionPath.TextChanged += new System.EventHandler(this.CollectionPath_TextChanged);
             // 
             // button5
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(285, 254);
+            this.button5.Location = new System.Drawing.Point(563, 870);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(172, 36);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "Pivot Deliverable";
+            this.button5.Size = new System.Drawing.Size(212, 36);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Load Project";
             this.button5.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView5
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.department,
+            this.courseNumber,
+            this.projName,
+            this.due,
+            this.priority,
+            this.load});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView5.Location = new System.Drawing.Point(7, 26);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowTemplate.Height = 28;
+            this.dataGridView5.Size = new System.Drawing.Size(768, 838);
+            this.dataGridView5.TabIndex = 17;
+            // 
+            // department
+            // 
+            this.department.HeaderText = "Dep.";
+            this.department.Name = "department";
+            this.department.Width = 50;
+            // 
+            // courseNumber
+            // 
+            this.courseNumber.HeaderText = "#";
+            this.courseNumber.Name = "courseNumber";
+            this.courseNumber.Width = 40;
+            // 
+            // projName
+            // 
+            this.projName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.projName.HeaderText = "Project Name";
+            this.projName.Name = "projName";
+            // 
+            // due
+            // 
+            this.due.HeaderText = "Due";
+            this.due.Name = "due";
+            this.due.Width = 60;
+            // 
+            // priority
+            // 
+            this.priority.HeaderText = "Priority";
+            this.priority.Name = "priority";
+            this.priority.Width = 60;
+            // 
+            // load
+            // 
+            this.load.HeaderText = "Load";
+            this.load.Name = "load";
+            this.load.Width = 50;
+            // 
+            // updateBindingSource
+            // 
+            this.updateBindingSource.DataSource = typeof(Project_Management_Utility_2._0.Update);
             // 
             // button6
             // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(680, 233);
+            this.button6.Location = new System.Drawing.Point(802, 1339);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(156, 36);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "Edit Associate";
+            this.button6.Size = new System.Drawing.Size(262, 65);
+            this.button6.TabIndex = 37;
+            this.button6.Text = "temp save button";
             this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(462, 233);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(212, 36);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "Remove Associate";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.dataGridView6);
-            this.groupBox5.Location = new System.Drawing.Point(475, 1379);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(311, 319);
-            this.groupBox5.TabIndex = 20;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Update History";
-            // 
-            // dataGridView6
-            // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.dataGridView6.Location = new System.Drawing.Point(7, 26);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowTemplate.Height = 28;
-            this.dataGridView6.Size = new System.Drawing.Size(298, 287);
-            this.dataGridView6.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Time";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Event";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Location = new System.Drawing.Point(792, 1379);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(237, 319);
-            this.groupBox6.TabIndex = 21;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Drop Resources";
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(1978, 786);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(235, 50);
-            this.button8.TabIndex = 37;
-            this.button8.Text = "Load Project";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(706, 42);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(311, 36);
-            this.button9.TabIndex = 38;
-            this.button9.Text = "New Project";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // projectId
-            // 
-            this.projectId.BackColor = System.Drawing.SystemColors.Control;
-            this.projectId.Location = new System.Drawing.Point(705, 14);
-            this.projectId.Name = "projectId";
-            this.projectId.Size = new System.Drawing.Size(312, 26);
-            this.projectId.TabIndex = 39;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(2225, 1731);
-            this.Controls.Add(this.projectId);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.groupBox6);
+            this.ClientSize = new System.Drawing.Size(1683, 1476);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.ProjectDueDate);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.projectPriority_comboBox);
-            this.Controls.Add(this.update_btn);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.courseNumber_textBox);
             this.Controls.Add(this.department_textBox);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.projectID_displayText);
-            this.Controls.Add(this.nextSteps_textBox);
             this.Controls.Add(this.projectType_comboBox);
             this.Controls.Add(this.projectStatus_comboBox);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.term_textBox);
             this.Controls.Add(this.learningObjective_textBox);
@@ -736,15 +690,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updateBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -761,11 +716,8 @@
         private System.Windows.Forms.TextBox term_textBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button addDeliverable_btn;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox projectStatus_comboBox;
         private System.Windows.Forms.ComboBox projectType_comboBox;
-        private System.Windows.Forms.TextBox nextSteps_textBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox department_textBox;
         private System.Windows.Forms.TextBox courseNumber_textBox;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
@@ -777,7 +729,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.DataGridViewTextBoxColumn isShared;
         private System.Windows.Forms.Button addLink_btn;
-        private System.Windows.Forms.Button update_btn;
         private System.Windows.Forms.ComboBox projectPriority_comboBox;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
@@ -788,33 +739,31 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn duration;
         private System.Windows.Forms.DataGridViewTextBoxColumn mediaType;
         private System.Windows.Forms.DataGridViewTextBoxColumn deliverableName;
-        private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn timeEvent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn collectionDepartment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn collectionCourseNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dueDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priority;
-        private System.Windows.Forms.DataGridViewTextBoxColumn leadDeveloper;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.DateTimePicker ProjectDueDate;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.BindingSource updateBindingSource;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn actionTaken;
+        private System.Windows.Forms.DataGridViewTextBoxColumn details;
+        private System.Windows.Forms.Button AddUpdate_btn;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dataGridView6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox projectId;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn department;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn projName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn due;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priority;
+        private System.Windows.Forms.DataGridViewTextBoxColumn load;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox collectionPath;
+        private System.Windows.Forms.Button button6;
     }
 }
 
