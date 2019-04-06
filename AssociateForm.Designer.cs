@@ -28,86 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Position = new System.Windows.Forms.ComboBox();
-            this.AssociateEmail = new System.Windows.Forms.TextBox();
-            this.Update = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.Cancel_btn = new System.Windows.Forms.Button();
+            this.associateRole_textBox = new System.Windows.Forms.ComboBox();
+            this.associateEmail_textBox = new System.Windows.Forms.TextBox();
+            this.UpdateComment = new System.Windows.Forms.Button();
+            this.associateName_textBox = new System.Windows.Forms.TextBox();
+            this.associateNotes_textBox = new System.Windows.Forms.TextBox();
+            this.associateCancel_btn = new System.Windows.Forms.Button();
+            this.associatePhone_textBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // Position
+            // associateRole_textBox
             // 
-            this.Position.FormattingEnabled = true;
-            this.Position.Items.AddRange(new object[] {
+            this.associateRole_textBox.FormattingEnabled = true;
+            this.associateRole_textBox.Items.AddRange(new object[] {
             "Stakeholder",
             "SME",
             "Instructor",
             "Developer",
             "ID"});
-            this.Position.Location = new System.Drawing.Point(19, 93);
-            this.Position.Name = "Position";
-            this.Position.Size = new System.Drawing.Size(543, 28);
-            this.Position.TabIndex = 3;
-            this.Position.Text = "Role";
+            this.associateRole_textBox.Location = new System.Drawing.Point(12, 77);
+            this.associateRole_textBox.Name = "associateRole_textBox";
+            this.associateRole_textBox.Size = new System.Drawing.Size(543, 28);
+            this.associateRole_textBox.TabIndex = 3;
+            this.associateRole_textBox.Text = "Role";
             // 
-            // AssociateEmail
+            // associateEmail_textBox
             // 
-            this.AssociateEmail.Location = new System.Drawing.Point(19, 61);
-            this.AssociateEmail.Name = "AssociateEmail";
-            this.AssociateEmail.Size = new System.Drawing.Size(543, 26);
-            this.AssociateEmail.TabIndex = 2;
-            this.AssociateEmail.Text = "Email Address";
+            this.associateEmail_textBox.Location = new System.Drawing.Point(12, 45);
+            this.associateEmail_textBox.Name = "associateEmail_textBox";
+            this.associateEmail_textBox.Size = new System.Drawing.Size(543, 26);
+            this.associateEmail_textBox.TabIndex = 2;
+            this.associateEmail_textBox.Text = "Email Address";
             // 
-            // Update
+            // UpdateComment
             // 
-            this.Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update.Location = new System.Drawing.Point(578, 29);
-            this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(126, 92);
-            this.Update.TabIndex = 5;
-            this.Update.Text = "Add/Update";
-            this.Update.UseVisualStyleBackColor = true;
+            this.UpdateComment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateComment.Location = new System.Drawing.Point(571, 13);
+            this.UpdateComment.Name = "UpdateComment";
+            this.UpdateComment.Size = new System.Drawing.Size(133, 92);
+            this.UpdateComment.TabIndex = 5;
+            this.UpdateComment.Text = "Save/\r\nUpdate";
+            this.UpdateComment.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // associateName_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(19, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(543, 26);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "Full Name";
+            this.associateName_textBox.Location = new System.Drawing.Point(12, 13);
+            this.associateName_textBox.Name = "associateName_textBox";
+            this.associateName_textBox.Size = new System.Drawing.Size(543, 26);
+            this.associateName_textBox.TabIndex = 1;
+            this.associateName_textBox.Text = "Full Name";
             // 
-            // textBox2
+            // associateNotes_textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(19, 128);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(543, 90);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.Text = "Notes...";
+            this.associateNotes_textBox.Location = new System.Drawing.Point(12, 143);
+            this.associateNotes_textBox.Multiline = true;
+            this.associateNotes_textBox.Name = "associateNotes_textBox";
+            this.associateNotes_textBox.Size = new System.Drawing.Size(543, 168);
+            this.associateNotes_textBox.TabIndex = 4;
+            this.associateNotes_textBox.Text = "Notes...";
             // 
-            // Cancel_btn
+            // associateCancel_btn
             // 
-            this.Cancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancel_btn.Location = new System.Drawing.Point(578, 128);
-            this.Cancel_btn.Name = "Cancel_btn";
-            this.Cancel_btn.Size = new System.Drawing.Size(126, 90);
-            this.Cancel_btn.TabIndex = 7;
-            this.Cancel_btn.Text = "Cancel";
-            this.Cancel_btn.UseVisualStyleBackColor = true;
+            this.associateCancel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.associateCancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.associateCancel_btn.Location = new System.Drawing.Point(571, 268);
+            this.associateCancel_btn.Name = "associateCancel_btn";
+            this.associateCancel_btn.Size = new System.Drawing.Size(133, 43);
+            this.associateCancel_btn.TabIndex = 7;
+            this.associateCancel_btn.Text = "Cancel";
+            this.associateCancel_btn.UseVisualStyleBackColor = true;
             // 
-            // Associate
+            // associatePhone_textBox
+            // 
+            this.associatePhone_textBox.Location = new System.Drawing.Point(12, 111);
+            this.associatePhone_textBox.Name = "associatePhone_textBox";
+            this.associatePhone_textBox.Size = new System.Drawing.Size(543, 26);
+            this.associatePhone_textBox.TabIndex = 10;
+            this.associatePhone_textBox.Text = "Phone Number";
+            // 
+            // AssociateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(716, 243);
-            this.Controls.Add(this.Cancel_btn);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Update);
-            this.Controls.Add(this.AssociateEmail);
-            this.Controls.Add(this.Position);
-            this.Name = "Associate";
+            this.ClientSize = new System.Drawing.Size(716, 323);
+            this.Controls.Add(this.associatePhone_textBox);
+            this.Controls.Add(this.associateCancel_btn);
+            this.Controls.Add(this.associateNotes_textBox);
+            this.Controls.Add(this.associateName_textBox);
+            this.Controls.Add(this.UpdateComment);
+            this.Controls.Add(this.associateEmail_textBox);
+            this.Controls.Add(this.associateRole_textBox);
+            this.Name = "AssociateForm";
             this.Text = "Add/Edit Associate";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,11 +128,12 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox Position;
-        private System.Windows.Forms.TextBox AssociateEmail;
-        private System.Windows.Forms.Button Update;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button Cancel_btn;
+        private System.Windows.Forms.ComboBox associateRole_textBox;
+        private System.Windows.Forms.TextBox associateEmail_textBox;
+        private System.Windows.Forms.Button UpdateComment;
+        private System.Windows.Forms.TextBox associateName_textBox;
+        private System.Windows.Forms.TextBox associateNotes_textBox;
+        private System.Windows.Forms.Button associateCancel_btn;
+        private System.Windows.Forms.TextBox associatePhone_textBox;
     }
 }

@@ -12,14 +12,16 @@ namespace Project_Management_Utility_2._0
 {
     public partial class MainForm : Form
     {
+        private static string id = generateID();
+        
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void SetHome_btn_Click(object sender, EventArgs e)
+        public static string generateID()
         {
-            
+            return Guid.NewGuid().ToString("N");
         }
     }
 }
