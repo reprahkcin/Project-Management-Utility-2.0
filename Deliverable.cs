@@ -16,6 +16,7 @@ namespace Project_Management_Utility_2._0
         public string accessibility;
         public string teamResponsible;
         public string finalLink;
+        public string duration;
         public List<Timestamp> timestamps;
         public List<Link> links;
 

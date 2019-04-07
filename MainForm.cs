@@ -173,53 +173,7 @@ namespace Project_Management_Utility_2._0
             File.WriteAllText(_savePath + "\\" + projectName_textBox.Text + ".json", serializedJson);
         }
 
-        private void ProjectName_textBox_Enter(object sender, EventArgs e)
-        {
-            BeginInvoke((Action)delegate
-            {
-                projectName_textBox.SelectAll();
-            });
-        }
 
-        private void Department_textBox_Enter(object sender, EventArgs e)
-        {
-            BeginInvoke((Action)delegate
-            {
-                department_textBox.SelectAll();
-            });
-        }
-
-        private void CourseNumber_textBox_Enter(object sender, EventArgs e)
-        {
-            BeginInvoke((Action)delegate
-            {
-                courseNumber_textBox.SelectAll();
-            });
-        }
-
-        private void Term_textBox_Enter(object sender, EventArgs e)
-        {
-            BeginInvoke((Action)delegate
-            {
-                term_textBox.SelectAll();
-            });
-        }
-
-        private void LearningObjective_textBox_Enter(object sender, EventArgs e)
-        {
-            BeginInvoke((Action)delegate
-            {
-                learningObjective_textBox.SelectAll();
-            });
-        }
-
-        private void ProjectDescription_textBox_Enter(object sender, EventArgs e)
-        {
-            BeginInvoke((Action)delegate
-            {
-                projectDescription_textBox.SelectAll();
-            });
-        }
 
 
     }
