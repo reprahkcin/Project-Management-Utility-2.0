@@ -86,8 +86,8 @@
             this.due = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.load = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button6 = new System.Windows.Forms.Button();
+            this.updateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -110,6 +110,7 @@
             this.projectName_textBox.TabIndex = 7;
             this.projectName_textBox.Text = "Project Name";
             this.projectName_textBox.TextChanged += new System.EventHandler(this.ProjectName_textBox_TextChanged);
+            this.projectName_textBox.Enter += new System.EventHandler(this.ProjectName_textBox_Enter);
             // 
             // projectDescription_textBox
             // 
@@ -120,6 +121,7 @@
             this.projectDescription_textBox.TabIndex = 9;
             this.projectDescription_textBox.Text = "Project Description...";
             this.projectDescription_textBox.TextChanged += new System.EventHandler(this.ProjectDescription_textBox_TextChanged);
+            this.projectDescription_textBox.Enter += new System.EventHandler(this.ProjectDescription_textBox_Enter);
             // 
             // groupBox1
             // 
@@ -185,6 +187,7 @@
             this.addAssociate_btn.TabIndex = 13;
             this.addAssociate_btn.Text = "Add Associate";
             this.addAssociate_btn.UseVisualStyleBackColor = true;
+            this.addAssociate_btn.Click += new System.EventHandler(this.AddAssociate_btn_Click);
             // 
             // learningObjective_textBox
             // 
@@ -195,6 +198,7 @@
             this.learningObjective_textBox.TabIndex = 10;
             this.learningObjective_textBox.Text = "Learning Objective...";
             this.learningObjective_textBox.TextChanged += new System.EventHandler(this.LearningObjective_textBox_TextChanged);
+            this.learningObjective_textBox.Enter += new System.EventHandler(this.LearningObjective_textBox_Enter);
             // 
             // projectID_displayText
             // 
@@ -214,6 +218,7 @@
             this.term_textBox.TabIndex = 5;
             this.term_textBox.Text = "Term";
             this.term_textBox.TextChanged += new System.EventHandler(this.Term_textBox_TextChanged);
+            this.term_textBox.Enter += new System.EventHandler(this.Term_textBox_Enter);
             // 
             // groupBox2
             // 
@@ -313,6 +318,7 @@
             // 
             // projectType_comboBox
             // 
+            this.projectType_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.projectType_comboBox.FormattingEnabled = true;
             this.projectType_comboBox.Items.AddRange(new object[] {
             "Course-Related - NEW",
@@ -325,7 +331,6 @@
             this.projectType_comboBox.Name = "projectType_comboBox";
             this.projectType_comboBox.Size = new System.Drawing.Size(271, 28);
             this.projectType_comboBox.TabIndex = 1;
-            this.projectType_comboBox.Text = "Project Type";
             this.projectType_comboBox.SelectedIndexChanged += new System.EventHandler(this.ProjectType_comboBox_SelectedIndexChanged);
             // 
             // department_textBox
@@ -336,6 +341,7 @@
             this.department_textBox.TabIndex = 3;
             this.department_textBox.Text = "Department";
             this.department_textBox.TextChanged += new System.EventHandler(this.Department_textBox_TextChanged);
+            this.department_textBox.Enter += new System.EventHandler(this.Department_textBox_Enter);
             // 
             // courseNumber_textBox
             // 
@@ -345,6 +351,7 @@
             this.courseNumber_textBox.TabIndex = 4;
             this.courseNumber_textBox.Text = "Course #";
             this.courseNumber_textBox.TextChanged += new System.EventHandler(this.CourseNumber_textBox_TextChanged);
+            this.courseNumber_textBox.Enter += new System.EventHandler(this.CourseNumber_textBox_Enter);
             // 
             // groupBox4
             // 
@@ -466,7 +473,6 @@
             this.ProjectDueDate.Name = "ProjectDueDate";
             this.ProjectDueDate.Size = new System.Drawing.Size(361, 26);
             this.ProjectDueDate.TabIndex = 2;
-            this.ProjectDueDate.ValueChanged += new System.EventHandler(this.DateTimePicker_ValueChanged);
             // 
             // groupBox3
             // 
@@ -645,10 +651,6 @@
             this.load.Name = "load";
             this.load.Width = 50;
             // 
-            // updateBindingSource
-            // 
-            this.updateBindingSource.DataSource = typeof(Project_Management_Utility_2._0.Update);
-            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(802, 1339);
@@ -658,6 +660,10 @@
             this.button6.Text = "temp save button";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.Button6_Click);
+            // 
+            // updateBindingSource
+            // 
+            this.updateBindingSource.DataSource = typeof(Project_Management_Utility_2._0.Update);
             // 
             // MainForm
             // 

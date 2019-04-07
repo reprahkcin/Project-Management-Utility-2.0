@@ -31,7 +31,7 @@
             this.LinkUrl = new System.Windows.Forms.TextBox();
             this.linkTypeComboBox = new System.Windows.Forms.ComboBox();
             this.linkNotes = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Add = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -42,7 +42,6 @@
             this.LinkUrl.Size = new System.Drawing.Size(775, 26);
             this.LinkUrl.TabIndex = 0;
             this.LinkUrl.Text = "URL";
-            this.LinkUrl.TextChanged += new System.EventHandler(this.LinkUrl_TextChanged);
             // 
             // linkTypeComboBox
             // 
@@ -67,19 +66,21 @@
             this.linkNotes.TabIndex = 2;
             this.linkNotes.Text = "Notes";
             // 
-            // button1
+            // Add
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(653, 154);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 43);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Add.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Add.Location = new System.Drawing.Point(653, 154);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(135, 43);
+            this.Add.TabIndex = 3;
+            this.Add.Text = "Add";
+            this.Add.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(512, 154);
@@ -96,10 +97,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 209);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Add);
             this.Controls.Add(this.linkNotes);
             this.Controls.Add(this.linkTypeComboBox);
             this.Controls.Add(this.LinkUrl);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LinkForm";
             this.Text = "LinkForm";
             this.ResumeLayout(false);
@@ -112,7 +116,7 @@
         private System.Windows.Forms.TextBox LinkUrl;
         private System.Windows.Forms.ComboBox linkTypeComboBox;
         private System.Windows.Forms.TextBox linkNotes;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Button button2;
     }
 }

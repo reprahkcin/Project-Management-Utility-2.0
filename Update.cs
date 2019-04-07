@@ -11,12 +11,6 @@
             time = new Timestamp("Update");
         }
 
-        public Update(string Note, string NextSteps)
-        {
-            note = Note;
-            time = new Timestamp("Update");
-            nextSteps = NextSteps;
-        }
 
     }
 }

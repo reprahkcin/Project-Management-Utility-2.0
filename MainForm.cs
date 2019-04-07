@@ -12,9 +12,11 @@ namespace Project_Management_Utility_2._0
         //private static string id = generateID();
         //public string savePath;
 
-        public Timestamp updateTimestamp;
+        //public Timestamp updateTimestamp;
        
-        public Update currentUpdate;
+        //public Update currentUpdate;
+
+        //public Link currentLink;
 
         List<string> listFiles = new List<string>();
 
@@ -34,11 +36,6 @@ namespace Project_Management_Utility_2._0
         private void ProjectType_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentProject.type = projectType_comboBox.SelectedText;
-        }
-
-        private void DateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Department_textBox_TextChanged(object sender, EventArgs e)
@@ -66,6 +63,7 @@ namespace Project_Management_Utility_2._0
             currentProject.name = projectName_textBox.Text;
         }
 
+
         private void ProjectDescription_textBox_TextChanged(object sender, EventArgs e)
         {
             currentProject.description = projectDescription_textBox.Text;
@@ -78,30 +76,78 @@ namespace Project_Management_Utility_2._0
 
         private void AddDeliverable_btn_Click(object sender, EventArgs e)
         {
-            var deliverableForm = new DeliverableForm();
-            deliverableForm.Show();
+            using (var deliverableForm = new DeliverableForm())
+            {
+                if (deliverableForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    Deliverable deliverable = new Deliverable();
+                    deliverable.name = deliverableForm.name;
+                    deliverable.description = deliverableForm.description;
+                    deliverable.priority = deliverableForm.priority;
+                    deliverable.mediaType = deliverableForm.mediaType;
+                    deliverable.dueDate = deliverableForm.dueDate;
+                    deliverable.status = deliverableForm.status;
+                    deliverable.quantity = deliverableForm.quantity;
+                    deliverable.estimatedTimePer = deliverableForm.estimatedTimePer;
+                    deliverable.accessibility = deliverableForm.accessibility;
+                    deliverable.teamResponsible = deliverableForm.teamResponsible;
+                    deliverable.finalLink = deliverableForm.finalLink;
+                    currentProject.deliverables.Add(deliverable);
+                    currentProject.timestamps.Add(new Timestamp("Added Deliverable"));
+                }
+            }
         }
-
-
 
         private void AddLink_btn_Click(object sender, EventArgs e)
         {
-            Link link = new Link();
-            var linkForm = new LinkForm();
-            linkForm.ShowDialog();
-            link.url = linkForm.url;
-            link.linkType = linkForm.linkType;
-            link.notes = linkForm.notes;
-            currentProject.links.Add(link);
+            using (var linkForm = new LinkForm())
+            {
+                if (linkForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    Link link = new Link();
+                    link.url = linkForm.url;
+                    link.linkType = linkForm.linkType;
+                    link.notes = linkForm.notes;
+                    currentProject.links.Add(link);
+                    currentProject.timestamps.Add(new Timestamp("Added Link"));
+                }
+            }
+ 
         }
 
         private void AddUpdate_btn_Click(object sender, EventArgs e)
         {
-            var updateForm = new UpdateForm();
-            updateForm.Show();
-            currentProject.updates.Add(updateForm.currentUpdate);
+            using (var updateForm = new UpdateForm())
+            {
+                if (updateForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    Update update = new Update();
+                    update.note = updateForm.note;
+                    update.time = new Timestamp("Update");
+                    update.nextSteps = updateForm.nextSteps;
+                    currentProject.updates.Add(update);
+                    currentProject.timestamps.Add(new Timestamp("Project Update"));
+                }
+            }
         }
-
+        private void AddAssociate_btn_Click(object sender, EventArgs e)
+        {
+            using (var associateForm = new AssociateForm())
+            {
+                if (associateForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    Associate associate = new Associate();
+                    associate.name = associateForm.name;
+                    associate.email = associateForm.email;
+                    associate.phone = associateForm.phone;
+                    associate.role = associateForm.role;
+                    associate.department = associateForm.department;
+                    associate.notes = associateForm.notes;
+                    currentProject.associates.Add(associate);
+                    currentProject.timestamps.Add(new Timestamp("Added Associate"));
+                }
+            }
+        }
         private void Button3_Click(object sender, EventArgs e)
         {
             listFiles.Clear();
@@ -126,5 +172,55 @@ namespace Project_Management_Utility_2._0
             string serializedJson = JsonConvert.SerializeObject(currentProject);
             File.WriteAllText(_savePath + "\\" + projectName_textBox.Text + ".json", serializedJson);
         }
+
+        private void ProjectName_textBox_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate
+            {
+                projectName_textBox.SelectAll();
+            });
+        }
+
+        private void Department_textBox_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate
+            {
+                department_textBox.SelectAll();
+            });
+        }
+
+        private void CourseNumber_textBox_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate
+            {
+                courseNumber_textBox.SelectAll();
+            });
+        }
+
+        private void Term_textBox_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate
+            {
+                term_textBox.SelectAll();
+            });
+        }
+
+        private void LearningObjective_textBox_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate
+            {
+                learningObjective_textBox.SelectAll();
+            });
+        }
+
+        private void ProjectDescription_textBox_Enter(object sender, EventArgs e)
+        {
+            BeginInvoke((Action)delegate
+            {
+                projectDescription_textBox.SelectAll();
+            });
+        }
+
+
     }
 }

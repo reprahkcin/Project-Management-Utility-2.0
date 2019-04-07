@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Project_Management_Utility_2._0
 {
@@ -8,7 +9,7 @@ namespace Project_Management_Utility_2._0
         public string description;
         public string priority;
         public string mediaType;
-        public string dueDate;
+        public DateTime dueDate;
         public string status;
         public string quantity;
         public string estimatedTimePer;
