@@ -8,25 +8,26 @@ namespace Project_Management_Utility_2._0
 {
     public partial class MainForm : Form
     {
-        public Project currentProject = new Project(); //Create the home for everything currently on-screen, will be overwritten 
-        //private static string id = generateID();
-        //public string savePath;
-
-        //public Timestamp updateTimestamp;
-       
-        //public Update currentUpdate;
-
-        //public Link currentLink;
-
-        List<string> listFiles = new List<string>();
-
+        public Project currentProject; //Create the home for everything currently on-screen, will be overwritten 
+        
+        List<string> listFiles = new List<string>(); // helps browser display home directory choices
         private string _savePath;
 
         public MainForm()
         {
             InitializeComponent();
+            NewProject();
         }
 
+        public void NewProject()
+        {
+            currentProject = new Project();
+            currentProject.id = generateID();
+            Update update = new Update();
+            update.time = new Timestamp("Project Created");
+            currentProject.updates.Add(update);
+            currentProject.timestamps.Add(new Timestamp("Project Created"));
+        }
 
         public static string generateID()
         {
@@ -94,6 +95,7 @@ namespace Project_Management_Utility_2._0
                     deliverable.finalLink = deliverableForm.finalLink;
                     currentProject.deliverables.Add(deliverable);
                     currentProject.timestamps.Add(new Timestamp("Added Deliverable"));
+                   
                 }
             }
         }
@@ -173,8 +175,14 @@ namespace Project_Management_Utility_2._0
             File.WriteAllText(_savePath + "\\" + projectName_textBox.Text + ".json", serializedJson);
         }
 
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            NewProject();
+        }
 
-
-
+        private void DataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
     }
 }

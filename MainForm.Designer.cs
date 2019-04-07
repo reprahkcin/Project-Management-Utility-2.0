@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.projectName_textBox = new System.Windows.Forms.TextBox();
             this.projectDescription_textBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -89,14 +89,18 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.updateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mediaType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deliverableName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.actionTaken = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.details = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button8 = new System.Windows.Forms.Button();
+            this.linkBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deliverableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.associateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.updateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mediaType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -108,12 +112,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.linkBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deliverableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.associateBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updateBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // projectName_textBox
             // 
-            this.projectName_textBox.Location = new System.Drawing.Point(12, 36);
+            this.projectName_textBox.Location = new System.Drawing.Point(186, 32);
             this.projectName_textBox.Name = "projectName_textBox";
             this.projectName_textBox.Size = new System.Drawing.Size(403, 26);
             this.projectName_textBox.TabIndex = 1;
@@ -209,7 +216,7 @@
             // 
             this.projectID_displayText.AutoSize = true;
             this.projectID_displayText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectID_displayText.Location = new System.Drawing.Point(701, 101);
+            this.projectID_displayText.Location = new System.Drawing.Point(875, 97);
             this.projectID_displayText.Name = "projectID_displayText";
             this.projectID_displayText.Size = new System.Drawing.Size(0, 20);
             this.projectID_displayText.TabIndex = 11;
@@ -217,7 +224,7 @@
             // 
             // term_textBox
             // 
-            this.term_textBox.Location = new System.Drawing.Point(336, 102);
+            this.term_textBox.Location = new System.Drawing.Point(510, 98);
             this.term_textBox.Name = "term_textBox";
             this.term_textBox.Size = new System.Drawing.Size(79, 26);
             this.term_textBox.TabIndex = 6;
@@ -250,15 +257,16 @@
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.qty,
+            this.quantity,
             this.duration,
             this.mediaType,
-            this.deliverableName});
+            this.name});
             this.dataGridView3.Location = new System.Drawing.Point(6, 26);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 28;
             this.dataGridView3.Size = new System.Drawing.Size(861, 222);
             this.dataGridView3.TabIndex = 30;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView3_CellContentClick);
             // 
             // addDeliverable_btn
             // 
@@ -289,7 +297,7 @@
             "Approval Pending",
             "Revisions Pending",
             "Late"});
-            this.projectStatus_comboBox.Location = new System.Drawing.Point(463, 36);
+            this.projectStatus_comboBox.Location = new System.Drawing.Point(637, 32);
             this.projectStatus_comboBox.Name = "projectStatus_comboBox";
             this.projectStatus_comboBox.Size = new System.Drawing.Size(247, 28);
             this.projectStatus_comboBox.TabIndex = 2;
@@ -306,7 +314,7 @@
             "Internal - SHORT TERM",
             "Internal - LONG TERM",
             "Miscellaneous"});
-            this.projectType_comboBox.Location = new System.Drawing.Point(12, 174);
+            this.projectType_comboBox.Location = new System.Drawing.Point(186, 170);
             this.projectType_comboBox.Name = "projectType_comboBox";
             this.projectType_comboBox.Size = new System.Drawing.Size(403, 28);
             this.projectType_comboBox.TabIndex = 8;
@@ -314,7 +322,7 @@
             // 
             // department_textBox
             // 
-            this.department_textBox.Location = new System.Drawing.Point(12, 102);
+            this.department_textBox.Location = new System.Drawing.Point(186, 98);
             this.department_textBox.Name = "department_textBox";
             this.department_textBox.Size = new System.Drawing.Size(227, 26);
             this.department_textBox.TabIndex = 4;
@@ -322,7 +330,7 @@
             // 
             // courseNumber_textBox
             // 
-            this.courseNumber_textBox.Location = new System.Drawing.Point(245, 102);
+            this.courseNumber_textBox.Location = new System.Drawing.Point(419, 98);
             this.courseNumber_textBox.Name = "courseNumber_textBox";
             this.courseNumber_textBox.Size = new System.Drawing.Size(86, 26);
             this.courseNumber_textBox.TabIndex = 5;
@@ -403,7 +411,7 @@
             "Medium",
             "Low",
             "Long-term"});
-            this.projectPriority_comboBox.Location = new System.Drawing.Point(463, 102);
+            this.projectPriority_comboBox.Location = new System.Drawing.Point(637, 98);
             this.projectPriority_comboBox.Name = "projectPriority_comboBox";
             this.projectPriority_comboBox.Size = new System.Drawing.Size(246, 28);
             this.projectPriority_comboBox.TabIndex = 3;
@@ -429,7 +437,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(463, 156);
+            this.label1.Location = new System.Drawing.Point(637, 152);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 25);
             this.label1.TabIndex = 36;
@@ -439,7 +447,7 @@
             // 
             this.ProjectDueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProjectDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ProjectDueDate.Location = new System.Drawing.Point(463, 184);
+            this.ProjectDueDate.Location = new System.Drawing.Point(637, 180);
             this.ProjectDueDate.Name = "ProjectDueDate";
             this.ProjectDueDate.Size = new System.Drawing.Size(246, 39);
             this.ProjectDueDate.TabIndex = 7;
@@ -539,14 +547,14 @@
             // 
             // dataGridView5
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.department,
@@ -555,15 +563,15 @@
             this.due,
             this.priority,
             this.load});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView5.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView5.Location = new System.Drawing.Point(7, 26);
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.RowTemplate.Height = 28;
@@ -619,7 +627,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 13);
+            this.label2.Location = new System.Drawing.Point(184, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 38;
@@ -628,7 +636,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(463, 13);
+            this.label3.Location = new System.Drawing.Point(637, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 20);
             this.label3.TabIndex = 39;
@@ -637,7 +645,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(463, 79);
+            this.label4.Location = new System.Drawing.Point(637, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 20);
             this.label4.TabIndex = 40;
@@ -646,7 +654,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 79);
+            this.label5.Location = new System.Drawing.Point(184, 75);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 20);
             this.label5.TabIndex = 41;
@@ -655,7 +663,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(245, 78);
+            this.label6.Location = new System.Drawing.Point(419, 74);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 20);
             this.label6.TabIndex = 42;
@@ -664,7 +672,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(332, 79);
+            this.label7.Location = new System.Drawing.Point(506, 75);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 20);
             this.label7.TabIndex = 43;
@@ -673,7 +681,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 148);
+            this.label8.Location = new System.Drawing.Point(184, 144);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 20);
             this.label8.TabIndex = 44;
@@ -697,34 +705,6 @@
             this.label10.TabIndex = 46;
             this.label10.Text = "Project Description";
             // 
-            // updateBindingSource
-            // 
-            this.updateBindingSource.DataSource = typeof(Project_Management_Utility_2._0.Update);
-            // 
-            // qty
-            // 
-            this.qty.HeaderText = "Qty";
-            this.qty.Name = "qty";
-            this.qty.Width = 50;
-            // 
-            // duration
-            // 
-            this.duration.HeaderText = "Est. Duration";
-            this.duration.Name = "duration";
-            this.duration.Width = 150;
-            // 
-            // mediaType
-            // 
-            this.mediaType.HeaderText = "Type";
-            this.mediaType.Name = "mediaType";
-            this.mediaType.Width = 150;
-            // 
-            // deliverableName
-            // 
-            this.deliverableName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.deliverableName.HeaderText = "Name";
-            this.deliverableName.Name = "deliverableName";
-            // 
             // date
             // 
             this.date.HeaderText = "Date";
@@ -741,12 +721,65 @@
             this.details.HeaderText = "Details";
             this.details.Name = "details";
             // 
+            // button8
+            // 
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Mono45-Headline", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(12, 12);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(156, 195);
+            this.button8.TabIndex = 47;
+            this.button8.Text = "START\r\nNEW\r\nPROJECT";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
+            // 
+            // linkBindingSource
+            // 
+            this.linkBindingSource.DataSource = typeof(Project_Management_Utility_2._0.Link);
+            // 
+            // deliverableBindingSource
+            // 
+            this.deliverableBindingSource.DataSource = typeof(Project_Management_Utility_2._0.Deliverable);
+            // 
+            // associateBindingSource
+            // 
+            this.associateBindingSource.DataSource = typeof(Project_Management_Utility_2._0.Associate);
+            // 
+            // updateBindingSource
+            // 
+            this.updateBindingSource.DataSource = typeof(Project_Management_Utility_2._0.Update);
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "Qty";
+            this.quantity.Name = "quantity";
+            this.quantity.Width = 50;
+            // 
+            // duration
+            // 
+            this.duration.HeaderText = "Est. Duration";
+            this.duration.Name = "duration";
+            this.duration.Width = 150;
+            // 
+            // mediaType
+            // 
+            this.mediaType.HeaderText = "Type";
+            this.mediaType.Name = "mediaType";
+            this.mediaType.Width = 150;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1741, 1476);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -790,6 +823,9 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.linkBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deliverableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.associateBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updateBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -857,13 +893,17 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mediaType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn deliverableName;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn actionTaken;
         private System.Windows.Forms.DataGridViewTextBoxColumn details;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.BindingSource associateBindingSource;
+        private System.Windows.Forms.BindingSource deliverableBindingSource;
+        private System.Windows.Forms.BindingSource linkBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mediaType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
     }
 }
 

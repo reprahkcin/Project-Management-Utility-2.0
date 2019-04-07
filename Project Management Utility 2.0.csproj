@@ -123,6 +123,9 @@
     </EmbeddedResource>
     <None Include="ExampleProject.json" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Associate.datasource" />
+    <None Include="Properties\DataSources\Deliverable.datasource" />
+    <None Include="Properties\DataSources\Link.datasource" />
     <None Include="Properties\DataSources\Update.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
