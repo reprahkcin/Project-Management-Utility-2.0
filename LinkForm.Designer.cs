@@ -72,10 +72,10 @@
             this.Add.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Add.Location = new System.Drawing.Point(653, 256);
+            this.Add.Location = new System.Drawing.Point(653, 272);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(135, 43);
-            this.Add.TabIndex = 3;
+            this.Add.TabIndex = 5;
             this.Add.Text = "Add";
             this.Add.UseVisualStyleBackColor = true;
             // 
@@ -84,7 +84,7 @@
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(512, 256);
+            this.button2.Location = new System.Drawing.Point(512, 272);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(135, 43);
             this.button2.TabIndex = 4;
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 311);
+            this.ClientSize = new System.Drawing.Size(800, 337);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

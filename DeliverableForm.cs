@@ -59,15 +59,12 @@ namespace Project_Management_Utility_2._0
             get { return finalLink_textBox.Text; }
         }
 
-        public string duration
+        public string finalDuration
         {
             get { return duration_maskedTextBox.Text; }
         }
 
-        private void Duration_maskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
 
-        }
 
     }
 }

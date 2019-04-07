@@ -417,7 +417,6 @@
             this.duration_maskedTextBox.Size = new System.Drawing.Size(100, 26);
             this.duration_maskedTextBox.TabIndex = 15;
             this.duration_maskedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.duration_maskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.Duration_maskedTextBox_MaskInputRejected);
             // 
             // DeliverableForm
             // 
