@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
+using System.Configuration;
 
 namespace Project_Management_Utility_2._0
 {
@@ -14,6 +15,12 @@ namespace Project_Management_Utility_2._0
         public string SavePath;
 
         public List<Project> ProjectCollection = new List<Project>();
+
+        public void CreateTimestamp(string type)
+        {
+            Timestamp t = new Timestamp(type);
+            CurrentProject.timestamps.Add(t);
+        }
 
         public MainForm()
         {
@@ -52,6 +59,32 @@ namespace Project_Management_Utility_2._0
             Update update = new Update {time = new Timestamp("Project Created")};
             CurrentProject.updates.Add(update);
             CurrentProject.timestamps.Add(new Timestamp("Project Created"));
+        }
+
+        public void LoadProject(Project p)
+        {
+           
+            CurrentProject = p;
+            projectName_textBox.Text = CurrentProject.name;
+            projectStatus_comboBox.Text = CurrentProject.status;
+            department_textBox.Text = CurrentProject.department;
+            courseNumber_textBox.Text = CurrentProject.courseNumber;
+            term_textBox.Text = CurrentProject.term;
+            projectPriority_comboBox.Text = CurrentProject.priority;
+            projectType_comboBox.Text = CurrentProject.type;
+
+            if (CurrentProject.dueDate.Date.Year > 2018)
+            {
+                ProjectDueDate.Value = CurrentProject.dueDate.Date;
+            }
+            
+            learningObjective_textBox.Text = CurrentProject.learningObjective;
+            projectDescription_textBox.Text = CurrentProject.description;
+            AddLinksToGrid();
+            AddUpdatesToGrid();
+            AddDeliverablesToGrid();
+            AddAssociatesToGrid();
+
         }
 
         #region Displaying Objects in Grids
@@ -129,10 +162,15 @@ namespace Project_Management_Utility_2._0
             {
                 int n = projects_dataGridView.Rows.Add();
                 projects_dataGridView.Rows[n].Cells[0].Value = project.department;
+                projects_dataGridView.Columns[0].Width = 50;
                 projects_dataGridView.Rows[n].Cells[1].Value = project.courseNumber;
+                projects_dataGridView.Columns[1].Width = 30;
                 projects_dataGridView.Rows[n].Cells[2].Value = project.name;
                 projects_dataGridView.Rows[n].Cells[3].Value = project.status;
+                projects_dataGridView.Columns[3].Width = 100;
                 projects_dataGridView.Rows[n].Cells[4].Value = project.priority;
+                projects_dataGridView.Rows[n].Cells[5].Value = project.term;
+                projects_dataGridView.Columns[5].Width = 30;
             }
             
 
@@ -249,6 +287,7 @@ namespace Project_Management_Utility_2._0
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
                     collectionPath.Text = fbd.SelectedPath;
+                   
                     File.WriteAllText(Application.StartupPath + @"\SavePath.txt",fbd.SelectedPath );
                 }
             }
@@ -266,26 +305,6 @@ namespace Project_Management_Utility_2._0
         #endregion
 
         #region Form Field Functions
-        private void ProjectType_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CurrentProject.type = projectType_comboBox.Text;
-        }
-
-        private void Department_textBox_TextChanged(object sender, EventArgs e)
-        {
-            CurrentProject.department = department_textBox.Text;
-        }
-
-        private void CourseNumber_textBox_TextChanged(object sender, EventArgs e)
-        {
-            CurrentProject.courseNumber = courseNumber_textBox.Text;
-        }
-
-        private void Term_textBox_TextChanged(object sender, EventArgs e)
-        {
-            CurrentProject.term = term_textBox.Text;
-        }
-
         private void ProjectStatus_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             CurrentProject.status = projectStatus_comboBox.Text;
@@ -329,7 +348,27 @@ namespace Project_Management_Utility_2._0
                     break;
             }
 
-            
+
+        }
+
+        private void ProjectType_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CurrentProject.type = projectType_comboBox.Text;
+        }
+
+        private void Department_textBox_TextChanged(object sender, EventArgs e)
+        {
+            CurrentProject.department = department_textBox.Text;
+        }
+
+        private void CourseNumber_textBox_TextChanged(object sender, EventArgs e)
+        {
+            CurrentProject.courseNumber = courseNumber_textBox.Text;
+        }
+
+        private void Term_textBox_TextChanged(object sender, EventArgs e)
+        {
+            CurrentProject.term = term_textBox.Text;
         }
 
         private void ProjectName_textBox_TextChanged(object sender, EventArgs e)
@@ -352,8 +391,6 @@ namespace Project_Management_Utility_2._0
             SavePath = collectionPath.Text;
         }
 
-        #endregion
-
         private void MetroButton1_Click(object sender, EventArgs e)
         {
             var email = new Email();
@@ -368,6 +405,42 @@ namespace Project_Management_Utility_2._0
         private void ProjectPriority_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             CurrentProject.priority = projectPriority_comboBox.Text;
+        }
+
+        private void ProjectDueDate_ValueChanged(object sender, EventArgs e)
+        {
+            CurrentProject.dueDate = ProjectDueDate.Value;
+            CreateTimestamp("Due Date Changed");
+       
+        }
+
+        #endregion
+
+        private void Button16_Click(object sender, EventArgs e)
+        {
+
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog() { Description = "Select Folder..." })
+            {
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+                    collectionPath.Text = fbd.SelectedPath;
+
+                    File.WriteAllText(Application.StartupPath + @"\SavePath.txt", fbd.SelectedPath);
+                }
+            }
+        }
+
+        private void Button17_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    string json = File.ReadAllText(SavePath + "\\" + ofd.SafeFileName);
+                    Project p = JsonConvert.DeserializeObject<Project>(json);
+                    LoadProject(p);
+                }
+            }
         }
     }
 }

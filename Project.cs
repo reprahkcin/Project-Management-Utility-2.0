@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Project_Management_Utility_2._0
 {
@@ -7,6 +8,7 @@ namespace Project_Management_Utility_2._0
         public string id;
         public string status;
         public string priority;
+        public DateTime dueDate;
         public string type;
         public string department;
         public string courseNumber;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliverableForm));
             this.estimatedTimePer_textBox = new System.Windows.Forms.TextBox();
             this.status_comboBox = new System.Windows.Forms.ComboBox();
             this.accessibility_comboBox = new System.Windows.Forms.ComboBox();
@@ -56,14 +57,16 @@
             // 
             // estimatedTimePer_textBox
             // 
+            this.estimatedTimePer_textBox.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.estimatedTimePer_textBox.Location = new System.Drawing.Point(96, 231);
             this.estimatedTimePer_textBox.Name = "estimatedTimePer_textBox";
-            this.estimatedTimePer_textBox.Size = new System.Drawing.Size(216, 26);
+            this.estimatedTimePer_textBox.Size = new System.Drawing.Size(216, 29);
             this.estimatedTimePer_textBox.TabIndex = 7;
             // 
             // status_comboBox
             // 
             this.status_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.status_comboBox.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.status_comboBox.FormattingEnabled = true;
             this.status_comboBox.Items.AddRange(new object[] {
             "Under Review",
@@ -80,24 +83,26 @@
             "Late"});
             this.status_comboBox.Location = new System.Drawing.Point(16, 32);
             this.status_comboBox.Name = "status_comboBox";
-            this.status_comboBox.Size = new System.Drawing.Size(296, 28);
+            this.status_comboBox.Size = new System.Drawing.Size(296, 30);
             this.status_comboBox.TabIndex = 1;
             // 
             // accessibility_comboBox
             // 
             this.accessibility_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.accessibility_comboBox.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accessibility_comboBox.FormattingEnabled = true;
             this.accessibility_comboBox.Items.AddRange(new object[] {
             "Captions",
             "Full WCAG 2.0"});
             this.accessibility_comboBox.Location = new System.Drawing.Point(318, 231);
             this.accessibility_comboBox.Name = "accessibility_comboBox";
-            this.accessibility_comboBox.Size = new System.Drawing.Size(302, 28);
+            this.accessibility_comboBox.Size = new System.Drawing.Size(314, 30);
             this.accessibility_comboBox.TabIndex = 8;
             // 
             // teamResponsible_comboBox
             // 
             this.teamResponsible_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.teamResponsible_comboBox.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teamResponsible_comboBox.FormattingEnabled = true;
             this.teamResponsible_comboBox.Items.AddRange(new object[] {
             "Custom",
@@ -106,27 +111,30 @@
             "Video"});
             this.teamResponsible_comboBox.Location = new System.Drawing.Point(318, 167);
             this.teamResponsible_comboBox.Name = "teamResponsible_comboBox";
-            this.teamResponsible_comboBox.Size = new System.Drawing.Size(301, 28);
+            this.teamResponsible_comboBox.Size = new System.Drawing.Size(314, 30);
             this.teamResponsible_comboBox.TabIndex = 5;
             // 
             // quantity_textBox
             // 
+            this.quantity_textBox.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quantity_textBox.Location = new System.Drawing.Point(16, 231);
             this.quantity_textBox.Name = "quantity_textBox";
-            this.quantity_textBox.Size = new System.Drawing.Size(74, 26);
+            this.quantity_textBox.Size = new System.Drawing.Size(74, 29);
             this.quantity_textBox.TabIndex = 6;
             // 
             // description_textBox
             // 
+            this.description_textBox.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.description_textBox.Location = new System.Drawing.Point(16, 365);
             this.description_textBox.Multiline = true;
             this.description_textBox.Name = "description_textBox";
-            this.description_textBox.Size = new System.Drawing.Size(603, 194);
+            this.description_textBox.Size = new System.Drawing.Size(616, 194);
             this.description_textBox.TabIndex = 10;
             // 
             // mediaType_comboBox
             // 
             this.mediaType_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mediaType_comboBox.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mediaType_comboBox.FormattingEnabled = true;
             this.mediaType_comboBox.Items.AddRange(new object[] {
             "Animation",
@@ -142,25 +150,27 @@
             "Maintenence & Repair"});
             this.mediaType_comboBox.Location = new System.Drawing.Point(16, 167);
             this.mediaType_comboBox.Name = "mediaType_comboBox";
-            this.mediaType_comboBox.Size = new System.Drawing.Size(296, 28);
+            this.mediaType_comboBox.Size = new System.Drawing.Size(296, 30);
             this.mediaType_comboBox.TabIndex = 4;
             // 
             // notes_textBox
             // 
+            this.notes_textBox.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notes_textBox.Location = new System.Drawing.Point(16, 598);
             this.notes_textBox.Multiline = true;
             this.notes_textBox.Name = "notes_textBox";
-            this.notes_textBox.Size = new System.Drawing.Size(603, 276);
+            this.notes_textBox.Size = new System.Drawing.Size(616, 276);
             this.notes_textBox.TabIndex = 11;
             // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(457, 880);
+            this.button1.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(420, 880);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 43);
+            this.button1.Size = new System.Drawing.Size(212, 60);
             this.button1.TabIndex = 17;
             this.button1.Text = "Add/Update";
             this.button1.UseVisualStyleBackColor = true;
@@ -169,42 +179,47 @@
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(305, 880);
+            this.button2.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button2.Location = new System.Drawing.Point(202, 880);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 43);
+            this.button2.Size = new System.Drawing.Size(212, 60);
             this.button2.TabIndex = 16;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // dueDate_picker
             // 
+            this.dueDate_picker.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dueDate_picker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dueDate_picker.Location = new System.Drawing.Point(124, 294);
             this.dueDate_picker.Name = "dueDate_picker";
-            this.dueDate_picker.Size = new System.Drawing.Size(496, 26);
+            this.dueDate_picker.Size = new System.Drawing.Size(508, 29);
             this.dueDate_picker.TabIndex = 9;
             // 
             // name_textBox
             // 
+            this.name_textBox.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name_textBox.Location = new System.Drawing.Point(16, 103);
             this.name_textBox.Name = "name_textBox";
-            this.name_textBox.Size = new System.Drawing.Size(603, 26);
+            this.name_textBox.Size = new System.Drawing.Size(616, 29);
             this.name_textBox.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(14, 295);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.Size = new System.Drawing.Size(89, 22);
             this.label1.TabIndex = 32;
             this.label1.Text = "Due Date:";
             // 
             // priority_comboBox
             // 
             this.priority_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.priority_comboBox.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priority_comboBox.FormattingEnabled = true;
             this.priority_comboBox.Items.AddRange(new object[] {
             "Rush",
@@ -212,98 +227,118 @@
             "Medium",
             "Low",
             "On-going"});
-            this.priority_comboBox.Location = new System.Drawing.Point(323, 32);
+            this.priority_comboBox.Location = new System.Drawing.Point(318, 32);
             this.priority_comboBox.Name = "priority_comboBox";
-            this.priority_comboBox.Size = new System.Drawing.Size(296, 28);
+            this.priority_comboBox.Size = new System.Drawing.Size(314, 30);
             this.priority_comboBox.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(12, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 20);
+            this.label2.Size = new System.Drawing.Size(152, 22);
             this.label2.TabIndex = 35;
             this.label2.Text = "Deliverable Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(12, 144);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 20);
+            this.label3.Size = new System.Drawing.Size(100, 22);
             this.label3.TabIndex = 36;
             this.label3.Text = "Media Type";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label4.Location = new System.Drawing.Point(314, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 20);
+            this.label4.Size = new System.Drawing.Size(154, 22);
             this.label4.TabIndex = 37;
             this.label4.Text = "Team Responsible";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label5.Location = new System.Drawing.Point(12, 208);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 20);
+            this.label5.Size = new System.Drawing.Size(83, 22);
             this.label5.TabIndex = 38;
             this.label5.Text = "Quantity";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(92, 208);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(147, 20);
+            this.label6.Size = new System.Drawing.Size(164, 22);
             this.label6.TabIndex = 39;
             this.label6.Text = "Estimated Time Per";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(314, 208);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 20);
+            this.label7.Size = new System.Drawing.Size(108, 22);
             this.label7.TabIndex = 40;
             this.label7.Text = "Accessibility";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label8.Location = new System.Drawing.Point(12, 342);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(171, 20);
+            this.label8.Size = new System.Drawing.Size(196, 22);
             this.label8.TabIndex = 41;
             this.label8.Text = "Deliverable Description";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label9.Location = new System.Drawing.Point(15, 575);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(154, 20);
+            this.label9.Size = new System.Drawing.Size(173, 22);
             this.label9.TabIndex = 42;
             this.label9.Text = "Notes and Discovery";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label12.Location = new System.Drawing.Point(12, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 20);
+            this.label12.Size = new System.Drawing.Size(62, 22);
             this.label12.TabIndex = 45;
             this.label12.Text = "Status";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(319, 9);
+            this.label13.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label13.Location = new System.Drawing.Point(314, 7);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 20);
+            this.label13.Size = new System.Drawing.Size(70, 22);
             this.label13.TabIndex = 46;
             this.label13.Text = "Priority";
             // 
@@ -311,7 +346,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 938);
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(648, 955);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
@@ -337,6 +373,7 @@
             this.Controls.Add(this.description_textBox);
             this.Controls.Add(this.quantity_textBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DeliverableForm";

@@ -11,6 +11,11 @@
             time = new Timestamp("Update");
         }
 
+        public Update(Timestamp t, string Type)
+        {
+
+        }
+
 
     }
 }
