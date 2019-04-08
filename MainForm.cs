@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
-using System.Configuration;
 
 namespace Project_Management_Utility_2._0
 {

@@ -79,10 +79,17 @@
             this.details = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddUpdate_btn = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button16 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.projects_dataGridView = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
+            this.department = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.due = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.collectionPath = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -95,27 +102,19 @@
             this.label10 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.status_panel = new System.Windows.Forms.Panel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.department = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.due = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.associates_dataGridView)).BeginInit();
@@ -127,7 +126,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.updates_dataGridView)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projects_dataGridView)).BeginInit();
-            this.status_panel.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -577,6 +575,17 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Projects";
             // 
+            // button16
+            // 
+            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button16.Location = new System.Drawing.Point(505, 784);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(52, 29);
+            this.button16.TabIndex = 34;
+            this.button16.Text = "...";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.Button16_Click);
+            // 
             // button5
             // 
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -633,6 +642,56 @@
             this.projects_dataGridView.Size = new System.Drawing.Size(768, 753);
             this.projects_dataGridView.TabIndex = 33;
             // 
+            // department
+            // 
+            this.department.HeaderText = "Dep.";
+            this.department.Name = "department";
+            this.department.ReadOnly = true;
+            this.department.Width = 50;
+            // 
+            // courseNumber
+            // 
+            this.courseNumber.HeaderText = "#";
+            this.courseNumber.Name = "courseNumber";
+            this.courseNumber.ReadOnly = true;
+            this.courseNumber.Width = 40;
+            // 
+            // projName
+            // 
+            this.projName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.projName.HeaderText = "Project Name";
+            this.projName.Name = "projName";
+            this.projName.ReadOnly = true;
+            // 
+            // due
+            // 
+            this.due.HeaderText = "Status";
+            this.due.Name = "due";
+            this.due.ReadOnly = true;
+            this.due.Width = 60;
+            // 
+            // priority
+            // 
+            this.priority.HeaderText = "Priority";
+            this.priority.Name = "priority";
+            this.priority.ReadOnly = true;
+            this.priority.Width = 60;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Due";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // collectionPath
+            // 
+            this.collectionPath.Location = new System.Drawing.Point(7, 784);
+            this.collectionPath.Name = "collectionPath";
+            this.collectionPath.Size = new System.Drawing.Size(492, 29);
+            this.collectionPath.TabIndex = 18;
+            this.collectionPath.Text = "Collection Path";
+            this.collectionPath.TextChanged += new System.EventHandler(this.CollectionPath_TextChanged);
+            // 
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -644,15 +703,6 @@
             this.button3.Text = "Set Working Folder";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // collectionPath
-            // 
-            this.collectionPath.Location = new System.Drawing.Point(7, 784);
-            this.collectionPath.Name = "collectionPath";
-            this.collectionPath.Size = new System.Drawing.Size(492, 29);
-            this.collectionPath.TabIndex = 18;
-            this.collectionPath.Text = "Collection Path";
-            this.collectionPath.TextChanged += new System.EventHandler(this.CollectionPath_TextChanged);
             // 
             // button6
             // 
@@ -772,60 +822,10 @@
             // status_panel
             // 
             this.status_panel.BackColor = System.Drawing.SystemColors.Control;
-            this.status_panel.Controls.Add(this.metroLabel1);
             this.status_panel.Location = new System.Drawing.Point(677, 26);
             this.status_panel.Name = "status_panel";
             this.status_panel.Size = new System.Drawing.Size(206, 17);
             this.status_panel.TabIndex = 48;
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(21, 20);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(0, 0);
-            this.metroLabel1.TabIndex = 0;
-            // 
-            // department
-            // 
-            this.department.HeaderText = "Dep.";
-            this.department.Name = "department";
-            this.department.ReadOnly = true;
-            this.department.Width = 50;
-            // 
-            // courseNumber
-            // 
-            this.courseNumber.HeaderText = "#";
-            this.courseNumber.Name = "courseNumber";
-            this.courseNumber.ReadOnly = true;
-            this.courseNumber.Width = 40;
-            // 
-            // projName
-            // 
-            this.projName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.projName.HeaderText = "Project Name";
-            this.projName.Name = "projName";
-            this.projName.ReadOnly = true;
-            // 
-            // due
-            // 
-            this.due.HeaderText = "Status";
-            this.due.Name = "due";
-            this.due.ReadOnly = true;
-            this.due.Width = 60;
-            // 
-            // priority
-            // 
-            this.priority.HeaderText = "Priority";
-            this.priority.Name = "priority";
-            this.priority.ReadOnly = true;
-            this.priority.Width = 60;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Due";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // groupBox6
             // 
@@ -850,104 +850,16 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Utlities (Under Development)";
             // 
-            // button1
+            // button15
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(7, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(505, 47);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Create Folder Structure";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(6, 89);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(505, 47);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Auto-Format Emails";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(6, 142);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(505, 47);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Generate Assignments";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(6, 195);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(505, 47);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "Generate Reports";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(6, 248);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(505, 47);
-            this.button9.TabIndex = 4;
-            this.button9.Text = "Roundtrip YouTube (Captions)";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(6, 301);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(505, 47);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Push to MCLL";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(6, 354);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(505, 47);
-            this.button11.TabIndex = 6;
-            this.button11.Text = "Status Reminders";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(6, 407);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(505, 47);
-            this.button12.TabIndex = 7;
-            this.button12.Text = "Create Asana Task";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(6, 460);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(505, 47);
-            this.button13.TabIndex = 8;
-            this.button13.Text = "Create TeamGantt Task";
-            this.button13.UseVisualStyleBackColor = true;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.Location = new System.Drawing.Point(7, 566);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(505, 47);
+            this.button15.TabIndex = 10;
+            this.button15.Text = "Roundtrip Kaltura (? through Canvas)";
+            this.button15.UseVisualStyleBackColor = true;
             // 
             // button14
             // 
@@ -960,31 +872,108 @@
             this.button14.Text = "Project Wrap-Up";
             this.button14.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // button13
             // 
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(7, 566);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(505, 47);
-            this.button15.TabIndex = 10;
-            this.button15.Text = "Roundtrip Kaltura (? through Canvas)";
-            this.button15.UseVisualStyleBackColor = true;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(6, 460);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(505, 47);
+            this.button13.TabIndex = 8;
+            this.button13.Text = "Create TeamGantt Task";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Location = new System.Drawing.Point(6, 407);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(505, 47);
+            this.button12.TabIndex = 7;
+            this.button12.Text = "Create Asana Task";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(6, 354);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(505, 47);
+            this.button11.TabIndex = 6;
+            this.button11.Text = "Status Reminders";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(6, 301);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(505, 47);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "Push to MCLL";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(6, 248);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(505, 47);
+            this.button9.TabIndex = 4;
+            this.button9.Text = "Roundtrip YouTube (Captions)";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(6, 195);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(505, 47);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "Generate Reports";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(6, 142);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(505, 47);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Generate Assignments";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(6, 89);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(505, 47);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Auto-Format Emails";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(7, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(505, 47);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Create Folder Structure";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // button16
-            // 
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Location = new System.Drawing.Point(505, 784);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(52, 29);
-            this.button16.TabIndex = 34;
-            this.button16.Text = "...";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.Button16_Click);
             // 
             // button17
             // 
@@ -1003,6 +992,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(2245, 1577);
             this.Controls.Add(this.button17);
@@ -1052,8 +1042,6 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.projects_dataGridView)).EndInit();
-            this.status_panel.ResumeLayout(false);
-            this.status_panel.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1116,7 +1104,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn url;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.Panel status_panel;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn department;
         private System.Windows.Forms.DataGridViewTextBoxColumn courseNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn projName;
