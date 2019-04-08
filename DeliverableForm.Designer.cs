@@ -41,14 +41,6 @@
             this.dueDate_picker = new System.Windows.Forms.DateTimePicker();
             this.name_textBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.finalLink_textBox = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.url = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isShared = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addLink_btn = new System.Windows.Forms.Button();
             this.priority_comboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,13 +50,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.duration_maskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // estimatedTimePer_textBox
@@ -171,7 +158,7 @@
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(457, 1323);
+            this.button1.Location = new System.Drawing.Point(457, 880);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(162, 43);
             this.button1.TabIndex = 17;
@@ -183,7 +170,7 @@
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(305, 1323);
+            this.button2.Location = new System.Drawing.Point(305, 880);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 43);
             this.button2.TabIndex = 16;
@@ -214,77 +201,6 @@
             this.label1.Size = new System.Drawing.Size(100, 25);
             this.label1.TabIndex = 32;
             this.label1.Text = "Due Date:";
-            // 
-            // finalLink_textBox
-            // 
-            this.finalLink_textBox.Location = new System.Drawing.Point(19, 1270);
-            this.finalLink_textBox.Name = "finalLink_textBox";
-            this.finalLink_textBox.Size = new System.Drawing.Size(481, 26);
-            this.finalLink_textBox.TabIndex = 14;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.dataGridView2);
-            this.groupBox4.Controls.Add(this.addLink_btn);
-            this.groupBox4.Location = new System.Drawing.Point(16, 892);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(603, 341);
-            this.groupBox4.TabIndex = 34;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Links";
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(6, 290);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(147, 36);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Remove Link";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.url,
-            this.type,
-            this.isShared});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 25);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(591, 259);
-            this.dataGridView2.TabIndex = 17;
-            // 
-            // url
-            // 
-            this.url.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.url.HeaderText = "Link";
-            this.url.Name = "url";
-            // 
-            // type
-            // 
-            this.type.HeaderText = "Type";
-            this.type.Name = "type";
-            this.type.Width = 200;
-            // 
-            // isShared
-            // 
-            this.isShared.HeaderText = "Shared";
-            this.isShared.Name = "isShared";
-            // 
-            // addLink_btn
-            // 
-            this.addLink_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addLink_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addLink_btn.Location = new System.Drawing.Point(441, 290);
-            this.addLink_btn.Name = "addLink_btn";
-            this.addLink_btn.Size = new System.Drawing.Size(156, 36);
-            this.addLink_btn.TabIndex = 13;
-            this.addLink_btn.Text = "Add/Edit Link";
-            this.addLink_btn.UseVisualStyleBackColor = true;
             // 
             // priority_comboBox
             // 
@@ -373,24 +289,6 @@
             this.label9.TabIndex = 42;
             this.label9.Text = "Notes and Discovery";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(18, 1247);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 20);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "Final Link";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(506, 1247);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 20);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Duration";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -409,25 +307,13 @@
             this.label13.TabIndex = 46;
             this.label13.Text = "Priority";
             // 
-            // duration_maskedTextBox
-            // 
-            this.duration_maskedTextBox.Location = new System.Drawing.Point(507, 1269);
-            this.duration_maskedTextBox.Mask = "00:00:00";
-            this.duration_maskedTextBox.Name = "duration_maskedTextBox";
-            this.duration_maskedTextBox.Size = new System.Drawing.Size(100, 26);
-            this.duration_maskedTextBox.TabIndex = 15;
-            this.duration_maskedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // DeliverableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 1382);
-            this.Controls.Add(this.duration_maskedTextBox);
+            this.ClientSize = new System.Drawing.Size(639, 938);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -437,8 +323,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.priority_comboBox);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.finalLink_textBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.name_textBox);
             this.Controls.Add(this.dueDate_picker);
@@ -457,8 +341,6 @@
             this.MinimizeBox = false;
             this.Name = "DeliverableForm";
             this.Text = "Add/Edit Deliverable";
-            this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,14 +360,6 @@
         private System.Windows.Forms.DateTimePicker dueDate_picker;
         private System.Windows.Forms.TextBox name_textBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox finalLink_textBox;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn url;
-        private System.Windows.Forms.DataGridViewTextBoxColumn type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isShared;
-        private System.Windows.Forms.Button addLink_btn;
         private System.Windows.Forms.ComboBox priority_comboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -495,10 +369,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.MaskedTextBox duration_maskedTextBox;
     }
 }

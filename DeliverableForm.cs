@@ -54,17 +54,17 @@ namespace Project_Management_Utility_2._0
         {
             get { return teamResponsible_comboBox.Text; }
         }
-        public string finalLink
+
+        private void AddLink_btn_Click(object sender, EventArgs e)
         {
-            get { return finalLink_textBox.Text; }
+            using (var linkForm = new LinkForm())
+            {
+                if (linkForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    Link link = new Link { url = linkForm.url, linkType = linkForm.linkType, notes = linkForm.notes };
+                    
+                }
+            }
         }
-
-        public string finalDuration
-        {
-            get { return duration_maskedTextBox.Text; }
-        }
-
-
-
     }
 }

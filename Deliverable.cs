@@ -15,15 +15,14 @@ namespace Project_Management_Utility_2._0
         public string estimatedTimePer;
         public string accessibility;
         public string teamResponsible;
-        public string finalLink;
-        public string finalDuration;
+
         public List<Timestamp> timestamps;
-        public List<Link> links;
+        public List<Link> deliverableLinks;
 
         public Deliverable()
         {
             timestamps = new List<Timestamp>();
-            links = new List<Link>();
+            deliverableLinks = new List<Link>();
         }
 
     }
