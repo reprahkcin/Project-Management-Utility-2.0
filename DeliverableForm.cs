@@ -30,10 +30,7 @@ namespace Project_Management_Utility_2._0
             get { return mediaType_comboBox.Text; }
         }
 
-        public DateTime dueDate
-        {
-            get { return dueDate_picker.Value; }
-        }
+
         public string status
         {
             get { return status_comboBox.Text; }

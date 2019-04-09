@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
-using System.Linq;
 using Newtonsoft.Json;
 
 namespace Project_Management_Utility_2._0
@@ -16,10 +15,9 @@ namespace Project_Management_Utility_2._0
 
         public List<Project> ProjectCollection = new List<Project>();
 
-        public void CreateTimestamp(string type)
+        public static string GenerateId()
         {
-            Timestamp t = new Timestamp(type);
-            CurrentProject.timestamps.Add(t);
+            return Guid.NewGuid().ToString("N");
         }
 
         public MainForm()
@@ -61,6 +59,25 @@ namespace Project_Management_Utility_2._0
             CurrentProject.timestamps.Add(new Timestamp("Project Created"));
         }
 
+        public void SaveProject()
+        {
+            string serializedJson = JsonConvert.SerializeObject(CurrentProject);
+            File.WriteAllText(SavePath + "\\" + projectName_textBox.Text + ".json", serializedJson);
+        }
+
+        public void BrowseForSavePath()
+        {
+            using (FolderBrowserDialog fbd = new FolderBrowserDialog() { Description = "Select Folder..." })
+            {
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+                    collectionPath.Text = fbd.SelectedPath;
+
+                    File.WriteAllText(Application.StartupPath + @"\SavePath.txt", fbd.SelectedPath);
+                }
+            }
+        }
+
         public void LoadProject(Project p)
         {
            
@@ -86,6 +103,113 @@ namespace Project_Management_Utility_2._0
             AddAssociatesToGrid();
 
         }
+
+        public void CreateTimestamp(string type)
+        {
+            Timestamp t = new Timestamp(type);
+            CurrentProject.timestamps.Add(t);
+        }
+
+        public void AddDeliverable()
+        {
+            using (var deliverableForm = new DeliverableForm())
+            {
+                if (deliverableForm.ShowDialog() == DialogResult.OK)
+                {
+                    Deliverable deliverable = new Deliverable
+                    {
+                        name = deliverableForm.name,
+                        description = deliverableForm.description,
+                        priority = deliverableForm.priority,
+                        mediaType = deliverableForm.mediaType,
+
+                        status = deliverableForm.status,
+                        quantity = deliverableForm.quantity,
+                        estimatedTimePer = deliverableForm.estimatedTimePer,
+                        accessibility = deliverableForm.accessibility,
+                        teamResponsible = deliverableForm.teamResponsible,
+                    };
+
+
+                    CurrentProject.deliverables.Add(deliverable);
+                    CurrentProject.timestamps.Add(new Timestamp("Added Deliverable"));
+
+                    AddDeliverablesToGrid();
+                    SaveProject();
+                }
+            }
+        }
+
+        public void AddLink()
+        {
+            using (var linkForm = new LinkForm())
+            {
+                if (linkForm.ShowDialog() == DialogResult.OK)
+                {
+                    Link link = new Link { url = linkForm.url, linkType = linkForm.linkType, notes = linkForm.notes };
+                    CurrentProject.links.Add(link);
+                    CurrentProject.timestamps.Add(new Timestamp("Added Link"));
+
+                    int n = links_dataGridView.Rows.Add();
+                    links_dataGridView.Rows[n].Cells[0].Value = link.url;
+                    links_dataGridView.Rows[n].Cells[1].Value = link.linkType;
+
+                    AddLinksToGrid();
+                    SaveProject();
+                }
+            }
+        }
+
+        public void AddUpdate()
+        {
+            using (var updateForm = new UpdateForm())
+            {
+                if (updateForm.ShowDialog() == DialogResult.OK)
+                {
+                    Update update = new Update
+                    {
+                        note = updateForm.note,
+                        time = new Timestamp("Update"),
+                        nextSteps = updateForm.nextSteps
+                    };
+                    CurrentProject.updates.Add(update);
+                    CurrentProject.timestamps.Add(new Timestamp("Project Update"));
+
+                    AddUpdatesToGrid();
+                    SaveProject();
+                }
+            }
+        }
+
+        public void AddAssociate()
+        {
+            using (var associateForm = new AssociateForm())
+            {
+                if (associateForm.ShowDialog() == DialogResult.OK)
+                {
+                    Associate associate = new Associate
+                    {
+                        name = associateForm.name,
+                        email = associateForm.email,
+                        phone = associateForm.phone,
+                        role = associateForm.role,
+                        department = associateForm.department,
+                        notes = associateForm.notes
+                    };
+                    CurrentProject.associates.Add(associate);
+                    CurrentProject.timestamps.Add(new Timestamp("Added Associate"));
+
+                    int n = associates_dataGridView.Rows.Add();
+                    associates_dataGridView.Rows[n].Cells[0].Value = associate.name;
+                    associates_dataGridView.Rows[n].Cells[1].Value = associate.email;
+                    associates_dataGridView.Rows[n].Cells[2].Value = associate.role;
+
+                    AddAssociatesToGrid();
+                    SaveProject();
+                }
+            }
+        }
+
 
         #region Displaying Objects in Grids
         public void AddLinksToGrid()
@@ -116,7 +240,6 @@ namespace Project_Management_Utility_2._0
                 deliverables_dataGridView.Rows[n].Cells[3].Value = deliverable.name;
             }
         }
-
 
         public void AddUpdatesToGrid()
         {
@@ -177,138 +300,10 @@ namespace Project_Management_Utility_2._0
 
 
         }
-        #endregion
 
-        #region Adding Objects to Project
-        public static string GenerateId()
+        public void ChangeStatusColors(string str)
         {
-            return Guid.NewGuid().ToString("N");
-        }
-
-        private void AddDeliverable_btn_Click(object sender, EventArgs e)
-        {
-            using (var deliverableForm = new DeliverableForm())
-            {
-                if (deliverableForm.ShowDialog() == DialogResult.OK)
-                {
-                    Deliverable deliverable = new Deliverable
-                    {
-                        name = deliverableForm.name,
-                        description = deliverableForm.description,
-                        priority = deliverableForm.priority,
-                        mediaType = deliverableForm.mediaType,
-                        dueDate = deliverableForm.dueDate,
-                        status = deliverableForm.status,
-                        quantity = deliverableForm.quantity,
-                        estimatedTimePer = deliverableForm.estimatedTimePer,
-                        accessibility = deliverableForm.accessibility,
-                        teamResponsible = deliverableForm.teamResponsible,
-                    };
-
-                    
-                    CurrentProject.deliverables.Add(deliverable);
-                    CurrentProject.timestamps.Add(new Timestamp("Added Deliverable"));
-
-                    AddDeliverablesToGrid();
-
-                }
-            }
-        }
-        private void AddLink_btn_Click(object sender, EventArgs e)
-        {
-            using (var linkForm = new LinkForm())
-            {
-                if (linkForm.ShowDialog() == DialogResult.OK)
-                {
-                    Link link = new Link { url = linkForm.url, linkType = linkForm.linkType, notes = linkForm.notes };
-                    CurrentProject.links.Add(link);
-                    CurrentProject.timestamps.Add(new Timestamp("Added Link"));
-
-                    int n = links_dataGridView.Rows.Add();
-                    links_dataGridView.Rows[n].Cells[0].Value = link.url;
-                    links_dataGridView.Rows[n].Cells[1].Value = link.linkType;
-
-                    AddLinksToGrid();
-                }
-            }
-
-        }
-        private void AddUpdate_btn_Click(object sender, EventArgs e)
-        {
-            using (var updateForm = new UpdateForm())
-            {
-                if (updateForm.ShowDialog() == DialogResult.OK)
-                {
-                    Update update = new Update
-                    {
-                        note = updateForm.note,
-                        time = new Timestamp("Update"),
-                        nextSteps = updateForm.nextSteps
-                    };
-                    CurrentProject.updates.Add(update);
-                    CurrentProject.timestamps.Add(new Timestamp("Project Update"));
-
-                    AddUpdatesToGrid();
-                }
-            }
-        }
-        private void AddAssociate_btn_Click(object sender, EventArgs e)
-        {
-            using (var associateForm = new AssociateForm())
-            {
-                if (associateForm.ShowDialog() == DialogResult.OK)
-                {
-                    Associate associate = new Associate
-                    {
-                        name = associateForm.name,
-                        email = associateForm.email,
-                        phone = associateForm.phone,
-                        role = associateForm.role,
-                        department = associateForm.department,
-                        notes = associateForm.notes
-                    };
-                    CurrentProject.associates.Add(associate);
-                    CurrentProject.timestamps.Add(new Timestamp("Added Associate"));
-
-                    int n = associates_dataGridView.Rows.Add();
-                    associates_dataGridView.Rows[n].Cells[0].Value = associate.name;
-                    associates_dataGridView.Rows[n].Cells[1].Value = associate.email;
-                    associates_dataGridView.Rows[n].Cells[2].Value = associate.role;
-
-                    AddAssociatesToGrid();
-                }
-            }
-        }
-        private void Button3_Click(object sender, EventArgs e)
-        {
-
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog() { Description = "Select Folder." })
-            {
-                if (fbd.ShowDialog() == DialogResult.OK)
-                {
-                    collectionPath.Text = fbd.SelectedPath;
-                   
-                    File.WriteAllText(Application.StartupPath + @"\SavePath.txt",fbd.SelectedPath );
-                }
-            }
-        }
-        private void Button6_Click(object sender, EventArgs e)
-        {
-            string serializedJson = JsonConvert.SerializeObject(CurrentProject);
-            File.WriteAllText(SavePath + "\\" + projectName_textBox.Text + ".json", serializedJson);
-        }
-        private void Button8_Click(object sender, EventArgs e)
-        {
-            NewProject();
-        }
-
-        #endregion
-
-        #region Form Field Functions
-        private void ProjectStatus_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            CurrentProject.status = projectStatus_comboBox.Text;
-            switch (projectStatus_comboBox.Text)
+            switch (str)
             {
                 case "Late":
                     status_panel.BackColor = Color.Crimson;
@@ -347,8 +342,50 @@ namespace Project_Management_Utility_2._0
                     status_panel.BackColor = Color.DarkSeaGreen;
                     break;
             }
+        }
+        #endregion
+
+        #region Adding Objects to Project
 
 
+        private void AddDeliverable_btn_Click(object sender, EventArgs e)
+        {
+            AddDeliverable();
+        }
+        private void AddLink_btn_Click(object sender, EventArgs e)
+        {
+            AddLink();
+        }
+        private void AddUpdate_btn_Click(object sender, EventArgs e)
+        {
+            AddUpdate();
+        }
+        private void AddAssociate_btn_Click(object sender, EventArgs e)
+        {
+            AddAssociate();
+        }
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            BrowseForSavePath();
+        }
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            SaveProject();
+        }
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            NewProject();
+        }
+
+
+
+        #endregion
+
+        #region Form Field Functions
+        private void ProjectStatus_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CurrentProject.status = projectStatus_comboBox.Text;
+            ChangeStatusColors(projectStatus_comboBox.Text);
         }
 
         private void ProjectType_comboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -391,11 +428,6 @@ namespace Project_Management_Utility_2._0
             SavePath = collectionPath.Text;
         }
 
-        private void MetroButton1_Click(object sender, EventArgs e)
-        {
-            var email = new Email();
-            email.SendMessage();
-        }
 
         private void Button5_Click(object sender, EventArgs e)
         {
@@ -411,23 +443,15 @@ namespace Project_Management_Utility_2._0
         {
             CurrentProject.dueDate = ProjectDueDate.Value;
             CreateTimestamp("Due Date Changed");
-       
         }
 
         #endregion
 
-        private void Button16_Click(object sender, EventArgs e)
+
+
+        private void Button16_Click(object sender, EventArgs e) 
         {
-
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog() { Description = "Select Folder..." })
-            {
-                if (fbd.ShowDialog() == DialogResult.OK)
-                {
-                    collectionPath.Text = fbd.SelectedPath;
-
-                    File.WriteAllText(Application.StartupPath + @"\SavePath.txt", fbd.SelectedPath);
-                }
-            }
+            BrowseForSavePath();
         }
 
         private void Button17_Click(object sender, EventArgs e)
@@ -467,17 +491,20 @@ namespace Project_Management_Utility_2._0
                
                 DataGridViewRow row = this.links_dataGridView.Rows[e.RowIndex];
                 string linkName = row.Cells[0].Value.ToString();
-
+                //List<Link> tempList;
                 
 
                 foreach (Link link in CurrentProject.links)
-                { 
+                {
+                    
                     if (linkName == link.url)
                     {
+                         
                         var linkForm = new LinkForm(link);
                         if (linkForm.ShowDialog() == DialogResult.OK)
                         {
-                            CurrentProject.links.Add(link);
+                            //CurrentProject.links.Add(link);
+                            CurrentProject.links.RemoveAt(e.RowIndex);
                             AddLinksToGrid();
                             //MessageBox.Show(linkName);
                         }

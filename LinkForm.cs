@@ -5,7 +5,7 @@ namespace Project_Management_Utility_2._0
 {
     public partial class LinkForm : Form
     {
-        Link linkToEdit;
+        Link linkToEdit = new Link("Enter a URL", "Select a type", "Add details");
 
 
 

@@ -9,7 +9,7 @@ namespace Project_Management_Utility_2._0
         public string description;
         public string priority;
         public string mediaType;
-        public DateTime dueDate;
+
         public string status;
         public string quantity;
         public string estimatedTimePer;

@@ -39,9 +39,7 @@
             this.notes_textBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dueDate_picker = new System.Windows.Forms.DateTimePicker();
             this.name_textBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.priority_comboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -125,10 +123,10 @@
             // description_textBox
             // 
             this.description_textBox.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description_textBox.Location = new System.Drawing.Point(16, 365);
+            this.description_textBox.Location = new System.Drawing.Point(16, 304);
             this.description_textBox.Multiline = true;
             this.description_textBox.Name = "description_textBox";
-            this.description_textBox.Size = new System.Drawing.Size(616, 194);
+            this.description_textBox.Size = new System.Drawing.Size(616, 255);
             this.description_textBox.TabIndex = 10;
             // 
             // mediaType_comboBox
@@ -188,15 +186,6 @@
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // dueDate_picker
-            // 
-            this.dueDate_picker.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dueDate_picker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dueDate_picker.Location = new System.Drawing.Point(124, 294);
-            this.dueDate_picker.Name = "dueDate_picker";
-            this.dueDate_picker.Size = new System.Drawing.Size(508, 29);
-            this.dueDate_picker.TabIndex = 9;
-            // 
             // name_textBox
             // 
             this.name_textBox.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,17 +193,6 @@
             this.name_textBox.Name = "name_textBox";
             this.name_textBox.Size = new System.Drawing.Size(616, 29);
             this.name_textBox.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(14, 295);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 22);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Due Date:";
             // 
             // priority_comboBox
             // 
@@ -303,7 +281,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(12, 342);
+            this.label8.Location = new System.Drawing.Point(12, 279);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(196, 22);
             this.label8.TabIndex = 41;
@@ -359,9 +337,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.priority_comboBox);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.name_textBox);
-            this.Controls.Add(this.dueDate_picker);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.notes_textBox);
@@ -394,9 +370,7 @@
         private System.Windows.Forms.TextBox notes_textBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker dueDate_picker;
         private System.Windows.Forms.TextBox name_textBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox priority_comboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
