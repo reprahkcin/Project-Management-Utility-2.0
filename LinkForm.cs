@@ -6,6 +6,9 @@ namespace Project_Management_Utility_2._0
     public partial class LinkForm : Form
     {
         Link linkToEdit;
+
+
+
         public LinkForm()
         {
             InitializeComponent();
@@ -14,9 +17,8 @@ namespace Project_Management_Utility_2._0
 
         public LinkForm(Link l)
         {
-            linkToEdit = new Link();
+            InitializeComponent();
             linkToEdit = l;
-            
         }
 
         public void SwapValues()
@@ -42,6 +44,13 @@ namespace Project_Management_Utility_2._0
         {
             get { return linkNotes.Text; }
      
+        }
+
+        private void LinkForm_Load(object sender, EventArgs e)
+        {
+            LinkUrl.Text = linkToEdit.url;
+            linkTypeComboBox.Text = linkToEdit.linkType;
+            linkNotes.Text = linkToEdit.notes;
         }
     }
 }

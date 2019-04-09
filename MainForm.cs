@@ -474,7 +474,7 @@ namespace Project_Management_Utility_2._0
                 { 
                     if (linkName == link.url)
                     {
-                        var linkForm = new LinkForm();
+                        var linkForm = new LinkForm(link);
                         if (linkForm.ShowDialog() == DialogResult.OK)
                         {
                             CurrentProject.links.Add(link);

@@ -147,6 +147,7 @@
             this.MinimizeBox = false;
             this.Name = "LinkForm";
             this.Text = "LinkForm";
+            this.Load += new System.EventHandler(this.LinkForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
