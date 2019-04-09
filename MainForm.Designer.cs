@@ -424,6 +424,7 @@
             this.links_dataGridView.RowTemplate.Height = 20;
             this.links_dataGridView.Size = new System.Drawing.Size(862, 183);
             this.links_dataGridView.TabIndex = 31;
+            this.links_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.links_dataGridView_CellContentClick);
             // 
             // url
             // 
@@ -641,6 +642,7 @@
             this.projects_dataGridView.RowTemplate.Height = 20;
             this.projects_dataGridView.Size = new System.Drawing.Size(768, 753);
             this.projects_dataGridView.TabIndex = 33;
+            this.projects_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.projects_dataGridView_CellContentClick);
             // 
             // department
             // 
@@ -993,6 +995,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(2245, 1577);
             this.Controls.Add(this.button17);

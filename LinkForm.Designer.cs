@@ -56,7 +56,8 @@
             "Resource from SME",
             "Shared Resource",
             "Reference",
-            "Final Output"});
+            "Final Output",
+            "Review Link"});
             this.linkTypeComboBox.Location = new System.Drawing.Point(12, 109);
             this.linkTypeComboBox.Name = "linkTypeComboBox";
             this.linkTypeComboBox.Size = new System.Drawing.Size(620, 30);
@@ -94,7 +95,6 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label1
             // 

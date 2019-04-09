@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace Project_Management_Utility_2._0
@@ -153,7 +154,7 @@ namespace Project_Management_Utility_2._0
             foreach (var path in projectList)
             {
                 string json = File.ReadAllText(path);
-                Project p = JsonConvert.DeserializeObject<Project>(json);
+                var p = JsonConvert.DeserializeObject<Project>(json);
                 ProjectCollection.Add(p);
             }
 
@@ -438,6 +439,49 @@ namespace Project_Management_Utility_2._0
                     string json = File.ReadAllText(SavePath + "\\" + ofd.SafeFileName);
                     Project p = JsonConvert.DeserializeObject<Project>(json);
                     LoadProject(p);
+                }
+            }
+        }
+
+        private void projects_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.projects_dataGridView.Rows[e.RowIndex];
+                string projectName = row.Cells[2].Value.ToString();
+                foreach (Project project in ProjectCollection)
+                {
+                    if (projectName == project.name)
+                    {
+                        LoadProject(project);
+                    }
+                }
+            }
+        }
+
+      
+        private void links_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+               
+                DataGridViewRow row = this.links_dataGridView.Rows[e.RowIndex];
+                string linkName = row.Cells[0].Value.ToString();
+
+                
+
+                foreach (Link link in CurrentProject.links)
+                { 
+                    if (linkName == link.url)
+                    {
+                        var linkForm = new LinkForm();
+                        if (linkForm.ShowDialog() == DialogResult.OK)
+                        {
+                            CurrentProject.links.Add(link);
+                            AddLinksToGrid();
+                            //MessageBox.Show(linkName);
+                        }
+                    }
                 }
             }
         }

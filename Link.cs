@@ -4,11 +4,15 @@
     {
         public string url;
         public string linkType;
-        public string association;
         public string notes;
-        public bool isShared;
+        
 
         public Link()
+        {
+
+        }
+
+        public Link(string url, string linkType, string notes)
         {
 
         }
