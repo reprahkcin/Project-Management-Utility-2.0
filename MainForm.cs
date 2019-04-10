@@ -483,34 +483,87 @@ namespace Project_Management_Utility_2._0
             }
         }
 
-      
+        public static string TransferURL;
+        public static string TransferType;
+        public static string TransferNote;
+        public Link tempLink;
+        public Link AssembleLink()
+        {
+            tempLink = new Link(TransferURL,TransferType,TransferNote);
+            return tempLink;
+        }
+        
+
+        public string OldLinkToRemoveFromList;
+
+        public void FindOldLinkAndRemoveIt()
+        {
+            foreach (Link link in CurrentProject.links)
+            {
+
+                if (OldLinkToRemoveFromList == link.url)
+                {
+                    CurrentProject.links.RemoveAt(CurrentProject.links.IndexOf(link));
+                }
+
+                break;
+            }
+        }
         private void links_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                
                 DataGridViewRow row = this.links_dataGridView.Rows[e.RowIndex];
-                string linkName = row.Cells[0].Value.ToString();
-                //List<Link> tempList;
-                
+                OldLinkToRemoveFromList = row.Cells[0].Value.ToString();
+
+               
 
                 foreach (Link link in CurrentProject.links)
                 {
-                    
-                    if (linkName == link.url)
+
+
+
+
+                    if (OldLinkToRemoveFromList == link.url)
                     {
                          
                         var linkForm = new LinkForm(link);
                         if (linkForm.ShowDialog() == DialogResult.OK)
                         {
+
                             //CurrentProject.links.Add(link);
-                            CurrentProject.links.RemoveAt(e.RowIndex);
-                            AddLinksToGrid();
-                            //MessageBox.Show(linkName);
+                            //CurrentProject.links.RemoveAt(e.RowIndex);
+                            
+                            //MessageBox.Show(TransferURL);
+                            //Link tempLink = new Link(TransferURL,TransferType,TransferNote);
+                           
+                            //FindOldLinkAndRemoveIt();
+                            //CurrentProject.links.Add(tempLink);
+                            //AddLinksToGrid();
                         }
                     }
+
+                    
                 }
+                for (int i = 0; i < CurrentProject.links.Count; i++)
+                {
+                    if (CurrentProject.links[i].url.Contains(OldLinkToRemoveFromList))
+                    {
+                        CurrentProject.links[i].url = TransferURL;
+                        CurrentProject.links[i].linkType = TransferType;
+                        CurrentProject.links[i].notes = TransferNote;
+                        AddLinksToGrid();
+                    }
+                }
+
+
             }
+        }
+
+        private void Button18_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

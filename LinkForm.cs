@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using static Project_Management_Utility_2._0.MainForm;
 
-namespace Project_Management_Utility_2._0
+namespace Project_Management_Utility_2._0 
 {
     public partial class LinkForm : Form
     {
@@ -51,6 +52,13 @@ namespace Project_Management_Utility_2._0
             LinkUrl.Text = linkToEdit.url;
             linkTypeComboBox.Text = linkToEdit.linkType;
             linkNotes.Text = linkToEdit.notes;
+        }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            TransferURL = LinkUrl.Text;
+            TransferType = linkTypeComboBox.Text;
+            TransferNote = linkNotes.Text;
         }
     }
 }
