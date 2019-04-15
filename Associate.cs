@@ -2,12 +2,12 @@
 {
     public class Associate
     {
-        public string name;
-        public string email;
-        public string phone;
-        public string role;
-        public string department;
-        public string notes;
+        public string Name;
+        public string Email;
+        public string Phone;
+        public string Role;
+        public string Department;
+        public string Notes;
 
         public Associate()
         {

@@ -1,4 +1,6 @@
-﻿namespace Project_Management_Utility_2._0
+﻿using System.Windows.Forms;
+
+namespace Project_Management_Utility_2._0
 {
     partial class AssociateForm
     {
@@ -218,7 +220,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AssociateForm";
+            ((Control) this).Name = "AssociateForm";
             this.Text = "Add/Edit Associate";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -8,12 +8,12 @@ namespace Project_Management_Utility_2._0
 {
     class ProjectCollection
     {
-        private List<Project> projects;
+        private List<Project> _projects;
 
         public List<Project> Projects
         {
-            get { return projects; }
-            set { projects = value; }
+            get { return _projects; }
+            set { _projects = value; }
         }
     }
 }

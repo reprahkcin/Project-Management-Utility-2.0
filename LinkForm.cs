@@ -6,7 +6,7 @@ namespace Project_Management_Utility_2._0
 {
     public partial class LinkForm : Form
     {
-        Link linkToEdit = new Link("Enter a URL", "Select a type", "Add details");
+        Link _linkToEdit = new Link(tempURL, tempLinkType, tempNote);
 
 
 
@@ -19,29 +19,29 @@ namespace Project_Management_Utility_2._0
         public LinkForm(Link l)
         {
             InitializeComponent();
-            linkToEdit = l;
+            _linkToEdit = l;
         }
 
         public void SwapValues()
         {
-            LinkUrl.Text = url;
-            linkTypeComboBox.Text = linkType;
-            linkNotes.Text = notes;
+            LinkUrl.Text = Url;
+            linkTypeComboBox.Text = LinkType;
+            linkNotes.Text = Notes;
         }
-        public string url
+        public string Url
         {
             get { return LinkUrl.Text; }
  
         }
 
-        public string linkType
+        public string LinkType
         {
             get { return linkTypeComboBox.Text; }
 
             set => linkTypeComboBox.Text = value;
         }
 
-        public string notes
+        public string Notes
         {
             get { return linkNotes.Text; }
      
@@ -49,16 +49,16 @@ namespace Project_Management_Utility_2._0
 
         private void LinkForm_Load(object sender, EventArgs e)
         {
-            LinkUrl.Text = linkToEdit.url;
-            linkTypeComboBox.Text = linkToEdit.linkType;
-            linkNotes.Text = linkToEdit.notes;
+            LinkUrl.Text = _linkToEdit.Url;
+            linkTypeComboBox.Text = _linkToEdit.LinkType;
+            linkNotes.Text = _linkToEdit.Note;
         }
 
         private void Add_Click(object sender, EventArgs e)
         {
-            TransferURL = LinkUrl.Text;
-            TransferType = linkTypeComboBox.Text;
-            TransferNote = linkNotes.Text;
+            tempURL = LinkUrl.Text;
+            tempLinkType = linkTypeComboBox.Text;
+            tempNote = linkNotes.Text;
         }
     }
 }

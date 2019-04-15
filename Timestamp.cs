@@ -4,15 +4,26 @@ namespace Project_Management_Utility_2._0
 {
     public class Timestamp
     {
-        public DateTime time;
-        public string stampType;
+        private DateTime _time;
+        private string _stampType;
 
 
-        public Timestamp(string StampType)
+        public Timestamp(string stampType)
         {
-            this.time = DateTime.Now;
-            this.stampType = StampType;
+            this.Time = DateTime.Now;
+            this.StampType = stampType;
         }
 
+        public DateTime Time
+        {
+            get { return _time; }
+            set { _time = value; }
+        }
+
+        public string StampType
+        {
+            get { return _stampType; }
+            set { _stampType = value; }
+        }
     }
 }

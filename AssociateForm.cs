@@ -8,27 +8,27 @@ namespace Project_Management_Utility_2._0
         {
             InitializeComponent();
         }
-        public string name
+        public string AssociateName
         {
             get { return associateName_textBox.Text; }
         }
-        public string email
+        public string Email
         {
             get { return associateEmail_textBox.Text; }
         }
-        public string phone
+        public string Phone
         {
             get { return associatePhone_textBox.Text; }
         }
-        public string role
+        public string Role
         {
             get { return associateRole_comboBox.Text; }
         }
-        public string department
+        public string Department
         {
             get { return associateDepartment_textBox.Text; }
         }
-        public string notes
+        public string Notes
         {
             get { return associateNotes_textBox.Text; }
         }

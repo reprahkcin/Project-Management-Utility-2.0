@@ -1,4 +1,6 @@
-﻿namespace Project_Management_Utility_2._0
+﻿using System.Windows.Forms;
+
+namespace Project_Management_Utility_2._0
 {
     partial class DeliverableForm
     {
@@ -352,7 +354,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "DeliverableForm";
+            ((Control) this).Name = "DeliverableForm";
             this.Text = "Add/Edit Deliverable";
             this.ResumeLayout(false);
             this.PerformLayout();

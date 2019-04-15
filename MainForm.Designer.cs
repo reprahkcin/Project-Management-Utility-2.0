@@ -65,6 +65,7 @@
             this.courseNumber_textBox = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button19 = new System.Windows.Forms.Button();
             this.links_dataGridView = new System.Windows.Forms.DataGridView();
             this.url = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -393,6 +394,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button19);
             this.groupBox4.Controls.Add(this.links_dataGridView);
             this.groupBox4.Controls.Add(this.addLink_btn);
             this.groupBox4.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -403,6 +405,18 @@
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Links";
+            // 
+            // button19
+            // 
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button19.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.Location = new System.Drawing.Point(441, 214);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(212, 60);
+            this.button19.TabIndex = 32;
+            this.button19.Text = "Remove Link";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.Button19_Click);
             // 
             // links_dataGridView
             // 
@@ -423,9 +437,10 @@
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.links_dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.links_dataGridView.RowTemplate.Height = 20;
+            this.links_dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.links_dataGridView.Size = new System.Drawing.Size(862, 183);
             this.links_dataGridView.TabIndex = 31;
-            this.links_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.links_dataGridView_CellContentClick);
+            this.links_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Links_dataGridView_CellContentClick);
             // 
             // url
             // 
@@ -998,7 +1013,6 @@
             this.button18.TabIndex = 51;
             this.button18.Text = "button18";
             this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.Button18_Click);
             // 
             // MainForm
             // 
@@ -1141,6 +1155,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button19;
     }
 }
 

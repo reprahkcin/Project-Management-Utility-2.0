@@ -10,44 +10,44 @@ namespace Project_Management_Utility_2._0
             InitializeComponent();
         }
 
-        public string name
+        public string DeliverableName
         {
             get { return name_textBox.Text; }
         }
 
-        public string description
+        public string Description
         {
             get { return description_textBox.Text; }
         }
 
-        public string priority
+        public string Priority
         {
             get { return priority_comboBox.Text; }
         }
 
-        public string mediaType
+        public string MediaType
         {
             get { return mediaType_comboBox.Text; }
         }
 
 
-        public string status
+        public string Status
         {
             get { return status_comboBox.Text; }
         }
-        public string quantity
+        public string Quantity
         {
             get { return quantity_textBox.Text; }
         }
-        public string estimatedTimePer
+        public string EstimatedTimePer
         {
             get { return estimatedTimePer_textBox.Text; }
         }
-        public string accessibility
+        public string Accessibility
         {
             get { return accessibility_comboBox.Text; }
         }
-        public string teamResponsible
+        public string TeamResponsible
         {
             get { return teamResponsible_comboBox.Text; }
         }
@@ -58,7 +58,7 @@ namespace Project_Management_Utility_2._0
             {
                 if (linkForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    Link link = new Link { url = linkForm.url, linkType = linkForm.linkType, notes = linkForm.notes };
+                    Link link = new Link { Url = linkForm.Url, LinkType = linkForm.LinkType, Note = linkForm.Notes };
                     
                 }
             }

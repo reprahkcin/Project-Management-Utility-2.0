@@ -28,7 +28,7 @@ namespace Project_Management_Utility_2._0
 
         public void NewProject()
         {
-            foreach (Control c in this.Controls)
+            foreach (Control c in this.Controls)  // Clears text boxes, but leaves save path
             {
                 if (c.GetType() == typeof(TextBox))
                 {
@@ -53,10 +53,12 @@ namespace Project_Management_Utility_2._0
                 deliverables_dataGridView.Rows.Clear();
                 
             }
-            CurrentProject = new Project {id = GenerateId()};
-            Update update = new Update {time = new Timestamp("Project Created")};
-            CurrentProject.updates.Add(update);
-            CurrentProject.timestamps.Add(new Timestamp("Project Created"));
+            CurrentProject = new Project {Id = GenerateId()};
+            Update update = new Update {Time = new Timestamp("Project Created")};
+            
+            CurrentProject.Updates.Add(update);
+            CurrentProject.Timestamps.Add(new Timestamp("Project Created"));
+            AddUpdatesToGrid();
         }
 
         public void SaveProject()
@@ -74,6 +76,7 @@ namespace Project_Management_Utility_2._0
                     collectionPath.Text = fbd.SelectedPath;
 
                     File.WriteAllText(Application.StartupPath + @"\SavePath.txt", fbd.SelectedPath);
+                    DisplayAllProjects();
                 }
             }
         }
@@ -82,21 +85,21 @@ namespace Project_Management_Utility_2._0
         {
            
             CurrentProject = p;
-            projectName_textBox.Text = CurrentProject.name;
-            projectStatus_comboBox.Text = CurrentProject.status;
-            department_textBox.Text = CurrentProject.department;
-            courseNumber_textBox.Text = CurrentProject.courseNumber;
-            term_textBox.Text = CurrentProject.term;
-            projectPriority_comboBox.Text = CurrentProject.priority;
-            projectType_comboBox.Text = CurrentProject.type;
+            projectName_textBox.Text = CurrentProject.Name;
+            projectStatus_comboBox.Text = CurrentProject.Status;
+            department_textBox.Text = CurrentProject.Department;
+            courseNumber_textBox.Text = CurrentProject.CourseNumber;
+            term_textBox.Text = CurrentProject.Term;
+            projectPriority_comboBox.Text = CurrentProject.Priority;
+            projectType_comboBox.Text = CurrentProject.Type1;
 
-            if (CurrentProject.dueDate.Date.Year > 2018)
+            if (CurrentProject.DueDate.Date.Year > 2018)
             {
-                ProjectDueDate.Value = CurrentProject.dueDate.Date;
+                ProjectDueDate.Value = CurrentProject.DueDate.Date;
             }
             
-            learningObjective_textBox.Text = CurrentProject.learningObjective;
-            projectDescription_textBox.Text = CurrentProject.description;
+            learningObjective_textBox.Text = CurrentProject.LearningObjective;
+            projectDescription_textBox.Text = CurrentProject.Description;
             AddLinksToGrid();
             AddUpdatesToGrid();
             AddDeliverablesToGrid();
@@ -107,7 +110,7 @@ namespace Project_Management_Utility_2._0
         public void CreateTimestamp(string type)
         {
             Timestamp t = new Timestamp(type);
-            CurrentProject.timestamps.Add(t);
+            CurrentProject.Timestamps.Add(t);
         }
 
         public void AddDeliverable()
@@ -118,21 +121,21 @@ namespace Project_Management_Utility_2._0
                 {
                     Deliverable deliverable = new Deliverable
                     {
-                        name = deliverableForm.name,
-                        description = deliverableForm.description,
-                        priority = deliverableForm.priority,
-                        mediaType = deliverableForm.mediaType,
+                        Name = deliverableForm.DeliverableName,
+                        Description = deliverableForm.Description,
+                        Priority = deliverableForm.Priority,
+                        MediaType = deliverableForm.MediaType,
 
-                        status = deliverableForm.status,
-                        quantity = deliverableForm.quantity,
-                        estimatedTimePer = deliverableForm.estimatedTimePer,
-                        accessibility = deliverableForm.accessibility,
-                        teamResponsible = deliverableForm.teamResponsible,
+                        Status = deliverableForm.Status,
+                        Quantity = deliverableForm.Quantity,
+                        EstimatedTimePer = deliverableForm.EstimatedTimePer,
+                        Accessibility = deliverableForm.Accessibility,
+                        TeamResponsible = deliverableForm.TeamResponsible,
                     };
 
 
-                    CurrentProject.deliverables.Add(deliverable);
-                    CurrentProject.timestamps.Add(new Timestamp("Added Deliverable"));
+                    CurrentProject.Deliverables.Add(deliverable);
+                    CurrentProject.Timestamps.Add(new Timestamp("Added Deliverable"));
 
                     AddDeliverablesToGrid();
                     SaveProject();
@@ -146,13 +149,13 @@ namespace Project_Management_Utility_2._0
             {
                 if (linkForm.ShowDialog() == DialogResult.OK)
                 {
-                    Link link = new Link { url = linkForm.url, linkType = linkForm.linkType, notes = linkForm.notes };
-                    CurrentProject.links.Add(link);
-                    CurrentProject.timestamps.Add(new Timestamp("Added Link"));
+                    Link link = new Link { Url = linkForm.Url, LinkType = linkForm.LinkType, Note = linkForm.Notes };
+                    CurrentProject.Links.Add(link);
+                    CurrentProject.Timestamps.Add(new Timestamp("Added Link"));
 
                     int n = links_dataGridView.Rows.Add();
-                    links_dataGridView.Rows[n].Cells[0].Value = link.url;
-                    links_dataGridView.Rows[n].Cells[1].Value = link.linkType;
+                    links_dataGridView.Rows[n].Cells[0].Value = link.Url;
+                    links_dataGridView.Rows[n].Cells[1].Value = link.LinkType;
 
                     AddLinksToGrid();
                     SaveProject();
@@ -168,12 +171,12 @@ namespace Project_Management_Utility_2._0
                 {
                     Update update = new Update
                     {
-                        note = updateForm.note,
-                        time = new Timestamp("Update"),
-                        nextSteps = updateForm.nextSteps
+                        Note = updateForm.Note,
+                        Time = new Timestamp("Update"),
+                        NextSteps = updateForm.NextSteps
                     };
-                    CurrentProject.updates.Add(update);
-                    CurrentProject.timestamps.Add(new Timestamp("Project Update"));
+                    CurrentProject.Updates.Add(update);
+                    CurrentProject.Timestamps.Add(new Timestamp("Project Update"));
 
                     AddUpdatesToGrid();
                     SaveProject();
@@ -189,20 +192,20 @@ namespace Project_Management_Utility_2._0
                 {
                     Associate associate = new Associate
                     {
-                        name = associateForm.name,
-                        email = associateForm.email,
-                        phone = associateForm.phone,
-                        role = associateForm.role,
-                        department = associateForm.department,
-                        notes = associateForm.notes
+                        Name = associateForm.AssociateName,
+                        Email = associateForm.Email,
+                        Phone = associateForm.Phone,
+                        Role = associateForm.Role,
+                        Department = associateForm.Department,
+                        Notes = associateForm.Notes
                     };
-                    CurrentProject.associates.Add(associate);
-                    CurrentProject.timestamps.Add(new Timestamp("Added Associate"));
+                    CurrentProject.Associates.Add(associate);
+                    CurrentProject.Timestamps.Add(new Timestamp("Added Associate"));
 
                     int n = associates_dataGridView.Rows.Add();
-                    associates_dataGridView.Rows[n].Cells[0].Value = associate.name;
-                    associates_dataGridView.Rows[n].Cells[1].Value = associate.email;
-                    associates_dataGridView.Rows[n].Cells[2].Value = associate.role;
+                    associates_dataGridView.Rows[n].Cells[0].Value = associate.Name;
+                    associates_dataGridView.Rows[n].Cells[1].Value = associate.Email;
+                    associates_dataGridView.Rows[n].Cells[2].Value = associate.Role;
 
                     AddAssociatesToGrid();
                     SaveProject();
@@ -215,41 +218,41 @@ namespace Project_Management_Utility_2._0
         public void AddLinksToGrid()
         {
             links_dataGridView.Rows.Clear();
-            foreach (Link link in CurrentProject.links)
+            foreach (Link link in CurrentProject.Links)
             {
                 int n = links_dataGridView.Rows.Add();
-                links_dataGridView.Rows[n].Cells[0].Value = link.url;
-                links_dataGridView.Rows[n].Cells[1].Value = link.linkType;
+                links_dataGridView.Rows[n].Cells[0].Value = link.Url;
+                links_dataGridView.Rows[n].Cells[1].Value = link.LinkType;
                 links_dataGridView.Columns[1].Width = 200;
-                links_dataGridView.Rows[n].Cells[0].ToolTipText = link.notes;
+                links_dataGridView.Rows[n].Cells[0].ToolTipText = link.Note;
             }
         }
 
         public void AddDeliverablesToGrid()
         {
             deliverables_dataGridView.Rows.Clear();
-            foreach (Deliverable deliverable in CurrentProject.deliverables)
+            foreach (Deliverable deliverable in CurrentProject.Deliverables)
             {
                 int n = deliverables_dataGridView.Rows.Add();
-                deliverables_dataGridView.Rows[n].Cells[0].Value = deliverable.quantity;
+                deliverables_dataGridView.Rows[n].Cells[0].Value = deliverable.Quantity;
                 deliverables_dataGridView.Columns[0].Width = 30;
-                deliverables_dataGridView.Rows[n].Cells[1].Value = deliverable.estimatedTimePer;
-                deliverables_dataGridView.Columns[1].Width = deliverable.estimatedTimePer.Length*8;
-                deliverables_dataGridView.Rows[n].Cells[2].Value = deliverable.mediaType;
-                deliverables_dataGridView.Columns[2].Width = deliverable.mediaType.Length * 8;
-                deliverables_dataGridView.Rows[n].Cells[3].Value = deliverable.name;
+                deliverables_dataGridView.Rows[n].Cells[1].Value = deliverable.EstimatedTimePer;
+                deliverables_dataGridView.Columns[1].Width = deliverable.EstimatedTimePer.Length*8;
+                deliverables_dataGridView.Rows[n].Cells[2].Value = deliverable.MediaType;
+                deliverables_dataGridView.Columns[2].Width = deliverable.MediaType.Length * 8;
+                deliverables_dataGridView.Rows[n].Cells[3].Value = deliverable.Name;
             }
         }
 
         public void AddUpdatesToGrid()
         {
             updates_dataGridView.Rows.Clear();
-            foreach (Update update in CurrentProject.updates)
+            foreach (Update update in CurrentProject.Updates)
             {
                 int n = updates_dataGridView.Rows.Add();
-                updates_dataGridView.Rows[n].Cells[0].Value = update.time.time;
-                updates_dataGridView.Rows[n].Cells[1].Value = update.note;
-                updates_dataGridView.Rows[n].Cells[2].Value = update.time.stampType;
+                updates_dataGridView.Rows[n].Cells[0].Value = update.Time.Time;
+                updates_dataGridView.Rows[n].Cells[1].Value = update.Note;
+                updates_dataGridView.Rows[n].Cells[2].Value = update.Time.StampType;
                 //updates_dataGridView.Rows[n].Cells[2].Value = ; <-- make this a link to open up the dialog and load self for editing.
             }
         }
@@ -257,12 +260,12 @@ namespace Project_Management_Utility_2._0
         public void AddAssociatesToGrid()
         {
             associates_dataGridView.Rows.Clear();
-            foreach (Associate associate in CurrentProject.associates)
+            foreach (Associate associate in CurrentProject.Associates)
             {
                 int n = associates_dataGridView.Rows.Add();
-                associates_dataGridView.Rows[n].Cells[0].Value = associate.name;
-                associates_dataGridView.Rows[n].Cells[1].Value = associate.email;
-                associates_dataGridView.Rows[n].Cells[2].Value = associate.role;
+                associates_dataGridView.Rows[n].Cells[0].Value = associate.Name;
+                associates_dataGridView.Rows[n].Cells[1].Value = associate.Email;
+                associates_dataGridView.Rows[n].Cells[2].Value = associate.Role;
             }
         }
 
@@ -284,15 +287,15 @@ namespace Project_Management_Utility_2._0
             foreach (Project project in ProjectCollection)
             {
                 int n = projects_dataGridView.Rows.Add();
-                projects_dataGridView.Rows[n].Cells[0].Value = project.department;
+                projects_dataGridView.Rows[n].Cells[0].Value = project.Department;
                 projects_dataGridView.Columns[0].Width = 50;
-                projects_dataGridView.Rows[n].Cells[1].Value = project.courseNumber;
+                projects_dataGridView.Rows[n].Cells[1].Value = project.CourseNumber;
                 projects_dataGridView.Columns[1].Width = 30;
-                projects_dataGridView.Rows[n].Cells[2].Value = project.name;
-                projects_dataGridView.Rows[n].Cells[3].Value = project.status;
+                projects_dataGridView.Rows[n].Cells[2].Value = project.Name;
+                projects_dataGridView.Rows[n].Cells[3].Value = project.Status;
                 projects_dataGridView.Columns[3].Width = 100;
-                projects_dataGridView.Rows[n].Cells[4].Value = project.priority;
-                projects_dataGridView.Rows[n].Cells[5].Value = project.term;
+                projects_dataGridView.Rows[n].Cells[4].Value = project.Priority;
+                projects_dataGridView.Rows[n].Cells[5].Value = project.Term;
                 projects_dataGridView.Columns[5].Width = 30;
             }
             
@@ -384,43 +387,43 @@ namespace Project_Management_Utility_2._0
         #region Form Field Functions
         private void ProjectStatus_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CurrentProject.status = projectStatus_comboBox.Text;
+            CurrentProject.Status = projectStatus_comboBox.Text;
             ChangeStatusColors(projectStatus_comboBox.Text);
         }
 
         private void ProjectType_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CurrentProject.type = projectType_comboBox.Text;
+            CurrentProject.Type1 = projectType_comboBox.Text;
         }
 
         private void Department_textBox_TextChanged(object sender, EventArgs e)
         {
-            CurrentProject.department = department_textBox.Text;
+            CurrentProject.Department = department_textBox.Text;
         }
 
         private void CourseNumber_textBox_TextChanged(object sender, EventArgs e)
         {
-            CurrentProject.courseNumber = courseNumber_textBox.Text;
+            CurrentProject.CourseNumber = courseNumber_textBox.Text;
         }
 
         private void Term_textBox_TextChanged(object sender, EventArgs e)
         {
-            CurrentProject.term = term_textBox.Text;
+            CurrentProject.Term = term_textBox.Text;
         }
 
         private void ProjectName_textBox_TextChanged(object sender, EventArgs e)
         {
-            CurrentProject.name = projectName_textBox.Text;
+            CurrentProject.Name = projectName_textBox.Text;
         }
 
         private void ProjectDescription_textBox_TextChanged(object sender, EventArgs e)
         {
-            CurrentProject.description = projectDescription_textBox.Text;
+            CurrentProject.Description = projectDescription_textBox.Text;
         }
 
         private void LearningObjective_textBox_TextChanged(object sender, EventArgs e)
         {
-            CurrentProject.learningObjective = learningObjective_textBox.Text;
+            CurrentProject.LearningObjective = learningObjective_textBox.Text;
         }
 
         private void CollectionPath_TextChanged(object sender, EventArgs e)
@@ -436,18 +439,16 @@ namespace Project_Management_Utility_2._0
 
         private void ProjectPriority_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CurrentProject.priority = projectPriority_comboBox.Text;
+            CurrentProject.Priority = projectPriority_comboBox.Text;
         }
 
         private void ProjectDueDate_ValueChanged(object sender, EventArgs e)
         {
-            CurrentProject.dueDate = ProjectDueDate.Value;
+            CurrentProject.DueDate = ProjectDueDate.Value;
             CreateTimestamp("Due Date Changed");
         }
 
         #endregion
-
-
 
         private void Button16_Click(object sender, EventArgs e) 
         {
@@ -467,6 +468,7 @@ namespace Project_Management_Utility_2._0
             }
         }
 
+
         private void projects_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -475,7 +477,7 @@ namespace Project_Management_Utility_2._0
                 string projectName = row.Cells[2].Value.ToString();
                 foreach (Project project in ProjectCollection)
                 {
-                    if (projectName == project.name)
+                    if (projectName == project.Name)
                     {
                         LoadProject(project);
                     }
@@ -483,87 +485,61 @@ namespace Project_Management_Utility_2._0
             }
         }
 
-        public static string TransferURL;
-        public static string TransferType;
-        public static string TransferNote;
-        public Link tempLink;
-        public Link AssembleLink()
+
+        private void Button19_Click(object sender, EventArgs e)
         {
-            tempLink = new Link(TransferURL,TransferType,TransferNote);
-            return tempLink;
+            int index = links_dataGridView.CurrentRow.Index;
+            
+            var str = links_dataGridView.Rows[index].Cells[0].Value.ToString();
+
+            foreach (DataGridViewRow row in links_dataGridView.SelectedRows)
+            {
+                if(!row.IsNewRow) links_dataGridView.Rows.Remove(row);
+            }
+
+            CurrentProject.RemoveLink(str);
         }
+
+
+
+
+        public static string tempURL = "Enter URL";
+        public static string tempLinkType = "Select Type of link";
+        public static string tempNote = "Enter any details";
+        public static Link TempLink;
         
 
-        public string OldLinkToRemoveFromList;
-
-        public void FindOldLinkAndRemoveIt()
-        {
-            foreach (Link link in CurrentProject.links)
-            {
-
-                if (OldLinkToRemoveFromList == link.url)
-                {
-                    CurrentProject.links.RemoveAt(CurrentProject.links.IndexOf(link));
-                }
-
-                break;
-            }
-        }
-        private void links_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Links_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-               
                 DataGridViewRow row = this.links_dataGridView.Rows[e.RowIndex];
-                OldLinkToRemoveFromList = row.Cells[0].Value.ToString();
-
-               
-
-                foreach (Link link in CurrentProject.links)
+                string URL = row.Cells[0].Value.ToString();
+                foreach (Link link in CurrentProject.Links)
                 {
-
-
-
-
-                    if (OldLinkToRemoveFromList == link.url)
+                    if (URL == link.Url)
                     {
-                         
-                        var linkForm = new LinkForm(link);
-                        if (linkForm.ShowDialog() == DialogResult.OK)
+                        tempURL = link.Url;
+                        tempLinkType = link.LinkType;
+                        tempNote = link.Note;
+                        TempLink = link;
+                        using (var linkForm = new LinkForm())
                         {
+                            if (linkForm.ShowDialog() == DialogResult.OK)
+                            {
+                                //TempLink = new Link(tempURL, tempLinkType, tempNote);
+                                
 
-                            //CurrentProject.links.Add(link);
-                            //CurrentProject.links.RemoveAt(e.RowIndex);
+                            }
+
                             
-                            //MessageBox.Show(TransferURL);
-                            //Link tempLink = new Link(TransferURL,TransferType,TransferNote);
-                           
-                            //FindOldLinkAndRemoveIt();
-                            //CurrentProject.links.Add(tempLink);
-                            //AddLinksToGrid();
+
                         }
                     }
-
-                    
                 }
-                for (int i = 0; i < CurrentProject.links.Count; i++)
-                {
-                    if (CurrentProject.links[i].url.Contains(OldLinkToRemoveFromList))
-                    {
-                        CurrentProject.links[i].url = TransferURL;
-                        CurrentProject.links[i].linkType = TransferType;
-                        CurrentProject.links[i].notes = TransferNote;
-                        AddLinksToGrid();
-                    }
-                }
-
-
+                CurrentProject.SwapLink(TempLink, tempURL, tempLinkType, tempNote);
+                AddLinksToGrid();
             }
-        }
-
-        private void Button18_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

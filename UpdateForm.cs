@@ -10,12 +10,12 @@ namespace Project_Management_Utility_2._0
         {
             InitializeComponent();
         }
-        public string note
+        public string Note
         {
             get { return note_textBox.Text; }
         }
 
-        public string nextSteps 
+        public string NextSteps 
         {
             get { return nextSteps_textBox.Text; }
         }
