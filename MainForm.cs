@@ -161,6 +161,7 @@ namespace Project_Management_Utility_2._0
                     SaveProject();
                 }
             }
+            ResetLinkDetails();
         }
 
         public void AddUpdate()
@@ -539,7 +540,15 @@ namespace Project_Management_Utility_2._0
                 }
                 CurrentProject.SwapLink(TempLink, tempURL, tempLinkType, tempNote);
                 AddLinksToGrid();
+                ResetLinkDetails();
             }
+        }
+
+        public void ResetLinkDetails()
+        {
+            tempURL = "Enter URL";
+            tempLinkType = "Select Type of Link";
+            tempNote = "Enter any details";
         }
     }
 }
