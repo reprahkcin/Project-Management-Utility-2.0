@@ -263,9 +263,9 @@ namespace Project_Management_Utility_2._0
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(92, 208);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(164, 22);
+            this.label6.Size = new System.Drawing.Size(100, 22);
             this.label6.TabIndex = 39;
-            this.label6.Text = "Estimated Time Per";
+            this.label6.Text = "Complexity";
             // 
             // label7
             // 
@@ -354,7 +354,7 @@ namespace Project_Management_Utility_2._0
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            ((Control) this).Name = "DeliverableForm";
+            this.Name = "DeliverableForm";
             this.Text = "Add/Edit Deliverable";
             this.ResumeLayout(false);
             this.PerformLayout();

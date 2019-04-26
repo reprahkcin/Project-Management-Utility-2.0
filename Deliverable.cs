@@ -12,7 +12,7 @@ namespace Project_Management_Utility_2._0
 
         private string _status;
         private string _quantity;
-        private string _estimatedTimePer;
+        private string _complexity;
         private string _accessibility;
         private string _teamResponsible;
 
@@ -63,8 +63,8 @@ namespace Project_Management_Utility_2._0
 
         public string EstimatedTimePer
         {
-            get { return _estimatedTimePer; }
-            set { _estimatedTimePer = value; }
+            get { return _complexity; }
+            set { _complexity = value; }
         }
 
         public string Accessibility

@@ -15,6 +15,24 @@ namespace Project_Management_Utility_2._0
 
         public List<Project> ProjectCollection = new List<Project>();
 
+
+        // Temporary Link housing
+        public static string tempURL = "Enter URL";
+        public static string tempLinkType = "Select Type of link";
+        public static string tempNote = "Enter any details";
+        public static Link TempLink;
+
+        // Temporary Deliverable housing
+        public static string tempDeliverableName = "Enter name of media object";
+        public static string tempDeliverableDescription = "Enter description and any details";
+        public static string tempDeliverablePriority = "Set priority";
+        public static string tempDeliverableMediaType = "Media type";
+        public static string tempDeliverableStatus = "Set status";
+        public static string tempDeliverableQuantity = "1";
+        public static string tempDeliverableComplexity = "1";
+        public static string tempDeliverableAccessibility = "WCAG 2.0";
+
+
         public static string GenerateId()
         {
             return Guid.NewGuid().ToString("N");
@@ -504,10 +522,7 @@ namespace Project_Management_Utility_2._0
 
 
 
-        public static string tempURL = "Enter URL";
-        public static string tempLinkType = "Select Type of link";
-        public static string tempNote = "Enter any details";
-        public static Link TempLink;
+
         
 
         private void Links_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
