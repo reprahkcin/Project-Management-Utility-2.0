@@ -2,18 +2,16 @@
 using System.Windows.Forms;
 using static Project_Management_Utility_2._0.MainForm;
 
-namespace Project_Management_Utility_2._0 
+namespace Project_Management_Utility_2._0
 {
     public partial class LinkForm : Form
     {
-        Link _linkToEdit = new Link(tempURL, tempLinkType, tempNote);
-
+        private readonly Link _linkToEdit = new Link(tempURL, tempLinkType, tempNote);
 
 
         public LinkForm()
         {
             InitializeComponent();
-
         }
 
         public LinkForm(Link l)
@@ -22,29 +20,22 @@ namespace Project_Management_Utility_2._0
             _linkToEdit = l;
         }
 
+        public string Url => LinkUrl.Text;
+
+        public string LinkType
+        {
+            get => linkTypeComboBox.Text;
+
+            set => linkTypeComboBox.Text = value;
+        }
+
+        public string Notes => linkNotes.Text;
+
         public void SwapValues()
         {
             LinkUrl.Text = Url;
             linkTypeComboBox.Text = LinkType;
             linkNotes.Text = Notes;
-        }
-        public string Url
-        {
-            get { return LinkUrl.Text; }
- 
-        }
-
-        public string LinkType
-        {
-            get { return linkTypeComboBox.Text; }
-
-            set => linkTypeComboBox.Text = value;
-        }
-
-        public string Notes
-        {
-            get { return linkNotes.Text; }
-     
         }
 
         private void LinkForm_Load(object sender, EventArgs e)

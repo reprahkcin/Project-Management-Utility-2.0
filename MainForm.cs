@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 using Newtonsoft.Json;
 
 namespace Project_Management_Utility_2._0
 {
     public partial class MainForm : Form
     {
-        public Project CurrentProject; //Create the home for everything currently on-screen, will be overwritten 
-
-        public string SavePath;
-
-        public List<Project> ProjectCollection = new List<Project>();
-
-
         // Temporary Link housing
         public static string tempURL = "Enter URL";
         public static string tempLinkType = "Select Type of link";
@@ -31,12 +24,16 @@ namespace Project_Management_Utility_2._0
         public static string tempDeliverableQuantity = "1";
         public static string tempDeliverableComplexity = "1";
         public static string tempDeliverableAccessibility = "WCAG 2.0";
+        public static string tempDeliverableTeamResponsible = "Select team";
+        public static List<Timestamp> tempDeliverableTimestamps = new List<Timestamp>();
+        public static List<Link> tempDeliverableLinks = new List<Link>();
 
+        
+        public Project CurrentProject; //Create the home for everything currently on-screen, will be overwritten 
 
-        public static string GenerateId()
-        {
-            return Guid.NewGuid().ToString("N");
-        }
+        public List<Project> ProjectCollection = new List<Project>();
+
+        public string SavePath;
 
         public MainForm()
         {
@@ -44,36 +41,33 @@ namespace Project_Management_Utility_2._0
             NewProject();
         }
 
+
+        public static string GenerateId()
+        {
+            return Guid.NewGuid().ToString("N");
+        }
+
         public void NewProject()
         {
-            foreach (Control c in this.Controls)  // Clears text boxes, but leaves save path
+            foreach (Control c in Controls) // Clears text boxes, but leaves save path
             {
-                if (c.GetType() == typeof(TextBox))
-                {
-                    c.Text = "";
-                }
+                if (c.GetType() == typeof(TextBox)) c.Text = "";
 
-                if (c.GetType() == typeof(ComboBox))
-                {
-                    (c as ComboBox).SelectedIndex = -1;
-                }
+                if (c.GetType() == typeof(ComboBox)) (c as ComboBox).SelectedIndex = -1;
 
-                if (c.GetType() == typeof(Panel))
-                {
-                    c.BackColor = DefaultBackColor;
-                }
+                if (c.GetType() == typeof(Panel)) c.BackColor = DefaultBackColor;
 
                 collectionPath.Text = File.ReadAllText(Application.StartupPath + @"\SavePath.txt");
                 SavePath = File.ReadAllText(Application.StartupPath + @"\SavePath.txt");
                 links_dataGridView.Rows.Clear();
                 associates_dataGridView.Rows.Clear();
                 updates_dataGridView.Rows.Clear();
-                deliverables_dataGridView.Rows.Clear();
-                
+                Deliverables_dataGridView.Rows.Clear();
             }
+
             CurrentProject = new Project {Id = GenerateId()};
-            Update update = new Update {Time = new Timestamp("Project Created")};
-            
+            var update = new Update {Time = new Timestamp("Project Created")};
+
             CurrentProject.Updates.Add(update);
             CurrentProject.Timestamps.Add(new Timestamp("Project Created"));
             AddUpdatesToGrid();
@@ -81,13 +75,13 @@ namespace Project_Management_Utility_2._0
 
         public void SaveProject()
         {
-            string serializedJson = JsonConvert.SerializeObject(CurrentProject);
+            var serializedJson = JsonConvert.SerializeObject(CurrentProject);
             File.WriteAllText(SavePath + "\\" + projectName_textBox.Text + ".json", serializedJson);
         }
 
         public void BrowseForSavePath()
         {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog() { Description = "Select Folder..." })
+            using (var fbd = new FolderBrowserDialog {Description = "Select Folder..."})
             {
                 if (fbd.ShowDialog() == DialogResult.OK)
                 {
@@ -101,7 +95,6 @@ namespace Project_Management_Utility_2._0
 
         public void LoadProject(Project p)
         {
-           
             CurrentProject = p;
             projectName_textBox.Text = CurrentProject.Name;
             projectStatus_comboBox.Text = CurrentProject.Status;
@@ -111,23 +104,19 @@ namespace Project_Management_Utility_2._0
             projectPriority_comboBox.Text = CurrentProject.Priority;
             projectType_comboBox.Text = CurrentProject.Type1;
 
-            if (CurrentProject.DueDate.Date.Year > 2018)
-            {
-                ProjectDueDate.Value = CurrentProject.DueDate.Date;
-            }
-            
+            if (CurrentProject.DueDate.Date.Year > 2018) ProjectDueDate.Value = CurrentProject.DueDate.Date;
+
             learningObjective_textBox.Text = CurrentProject.LearningObjective;
             projectDescription_textBox.Text = CurrentProject.Description;
             AddLinksToGrid();
             AddUpdatesToGrid();
             AddDeliverablesToGrid();
             AddAssociatesToGrid();
-
         }
 
         public void CreateTimestamp(string type)
         {
-            Timestamp t = new Timestamp(type);
+            var t = new Timestamp(type);
             CurrentProject.Timestamps.Add(t);
         }
 
@@ -137,7 +126,7 @@ namespace Project_Management_Utility_2._0
             {
                 if (deliverableForm.ShowDialog() == DialogResult.OK)
                 {
-                    Deliverable deliverable = new Deliverable
+                    var deliverable = new Deliverable
                     {
                         Name = deliverableForm.DeliverableName,
                         Description = deliverableForm.Description,
@@ -146,9 +135,9 @@ namespace Project_Management_Utility_2._0
 
                         Status = deliverableForm.Status,
                         Quantity = deliverableForm.Quantity,
-                        EstimatedTimePer = deliverableForm.EstimatedTimePer,
+                        Complexity = deliverableForm.EstimatedTimePer,
                         Accessibility = deliverableForm.Accessibility,
-                        TeamResponsible = deliverableForm.TeamResponsible,
+                        TeamResponsible = deliverableForm.TeamResponsible
                     };
 
 
@@ -167,11 +156,11 @@ namespace Project_Management_Utility_2._0
             {
                 if (linkForm.ShowDialog() == DialogResult.OK)
                 {
-                    Link link = new Link { Url = linkForm.Url, LinkType = linkForm.LinkType, Note = linkForm.Notes };
+                    var link = new Link {Url = linkForm.Url, LinkType = linkForm.LinkType, Note = linkForm.Notes};
                     CurrentProject.Links.Add(link);
                     CurrentProject.Timestamps.Add(new Timestamp("Added Link"));
 
-                    int n = links_dataGridView.Rows.Add();
+                    var n = links_dataGridView.Rows.Add();
                     links_dataGridView.Rows[n].Cells[0].Value = link.Url;
                     links_dataGridView.Rows[n].Cells[1].Value = link.LinkType;
 
@@ -179,6 +168,7 @@ namespace Project_Management_Utility_2._0
                     SaveProject();
                 }
             }
+
             ResetLinkDetails();
         }
 
@@ -188,7 +178,7 @@ namespace Project_Management_Utility_2._0
             {
                 if (updateForm.ShowDialog() == DialogResult.OK)
                 {
-                    Update update = new Update
+                    var update = new Update
                     {
                         Note = updateForm.Note,
                         Time = new Timestamp("Update"),
@@ -209,7 +199,7 @@ namespace Project_Management_Utility_2._0
             {
                 if (associateForm.ShowDialog() == DialogResult.OK)
                 {
-                    Associate associate = new Associate
+                    var associate = new Associate
                     {
                         Name = associateForm.AssociateName,
                         Email = associateForm.Email,
@@ -221,7 +211,7 @@ namespace Project_Management_Utility_2._0
                     CurrentProject.Associates.Add(associate);
                     CurrentProject.Timestamps.Add(new Timestamp("Added Associate"));
 
-                    int n = associates_dataGridView.Rows.Add();
+                    var n = associates_dataGridView.Rows.Add();
                     associates_dataGridView.Rows[n].Cells[0].Value = associate.Name;
                     associates_dataGridView.Rows[n].Cells[1].Value = associate.Email;
                     associates_dataGridView.Rows[n].Cells[2].Value = associate.Role;
@@ -232,14 +222,112 @@ namespace Project_Management_Utility_2._0
             }
         }
 
+        private void Button16_Click(object sender, EventArgs e)
+        {
+            BrowseForSavePath();
+        }
+
+        private void Button17_Click(object sender, EventArgs e)
+        {
+            using (var ofd = new OpenFileDialog())
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    var json = File.ReadAllText(SavePath + "\\" + ofd.SafeFileName);
+                    var p = JsonConvert.DeserializeObject<Project>(json);
+                    LoadProject(p);
+                }
+            }
+        }
+
+
+        private void projects_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var row = projects_dataGridView.Rows[e.RowIndex];
+                var projectName = row.Cells[2].Value.ToString();
+                foreach (var project in ProjectCollection)
+                    if (projectName == project.Name)
+                        LoadProject(project);
+            }
+        }
+
+
+        private void Button19_Click(object sender, EventArgs e)
+        {
+            var index = links_dataGridView.CurrentRow.Index;
+
+            var str = links_dataGridView.Rows[index].Cells[0].Value.ToString();
+
+            foreach (DataGridViewRow row in links_dataGridView.SelectedRows)
+                if (!row.IsNewRow)
+                    links_dataGridView.Rows.Remove(row);
+
+            CurrentProject.RemoveLink(str);
+        }
+
+
+        private void Links_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var row = links_dataGridView.Rows[e.RowIndex];
+                var URL = row.Cells[0].Value.ToString();
+                foreach (var link in CurrentProject.Links)
+                    if (URL == link.Url)
+                    {
+                        tempURL = link.Url;
+                        tempLinkType = link.LinkType;
+                        tempNote = link.Note;
+                        TempLink = link;
+                        using (var linkForm = new LinkForm())
+                        {
+                            if (linkForm.ShowDialog() == DialogResult.OK)
+                            {
+                                //TempLink = new Link(tempURL, tempLinkType, tempNote);
+                            }
+                        }
+                    }
+
+                CurrentProject.SwapLink(TempLink, tempURL, tempLinkType, tempNote);
+                AddLinksToGrid();
+                ResetLinkDetails();
+            }
+        }
+
+        public void ResetLinkDetails()
+        {
+            tempURL = "Enter URL";
+            tempLinkType = "Select Type of Link";
+            tempNote = "Enter any details";
+        }
+
+
+
+        public void ResetDeliverableDetails()
+        {
+        tempDeliverableName = "Enter name of media object";
+        tempDeliverableDescription = "Enter description and any details";
+        tempDeliverablePriority = "Set priority";
+        tempDeliverableMediaType = "Media type";
+        tempDeliverableStatus = "Set status";
+        tempDeliverableQuantity = "1";
+        tempDeliverableComplexity = "1";
+        tempDeliverableAccessibility = "WCAG 2.0";
+        tempDeliverableTeamResponsible = "Select team";
+
+        }
+
 
         #region Displaying Objects in Grids
+
         public void AddLinksToGrid()
         {
             links_dataGridView.Rows.Clear();
-            foreach (Link link in CurrentProject.Links)
+            foreach (var link in CurrentProject.Links)
             {
-                int n = links_dataGridView.Rows.Add();
+                var n = links_dataGridView.Rows.Add();
                 links_dataGridView.Rows[n].Cells[0].Value = link.Url;
                 links_dataGridView.Rows[n].Cells[1].Value = link.LinkType;
                 links_dataGridView.Columns[1].Width = 200;
@@ -249,26 +337,26 @@ namespace Project_Management_Utility_2._0
 
         public void AddDeliverablesToGrid()
         {
-            deliverables_dataGridView.Rows.Clear();
-            foreach (Deliverable deliverable in CurrentProject.Deliverables)
+            Deliverables_dataGridView.Rows.Clear();
+            foreach (var deliverable in CurrentProject.Deliverables)
             {
-                int n = deliverables_dataGridView.Rows.Add();
-                deliverables_dataGridView.Rows[n].Cells[0].Value = deliverable.Quantity;
-                deliverables_dataGridView.Columns[0].Width = 30;
-                deliverables_dataGridView.Rows[n].Cells[1].Value = deliverable.EstimatedTimePer;
-                deliverables_dataGridView.Columns[1].Width = deliverable.EstimatedTimePer.Length*8;
-                deliverables_dataGridView.Rows[n].Cells[2].Value = deliverable.MediaType;
-                deliverables_dataGridView.Columns[2].Width = deliverable.MediaType.Length * 8;
-                deliverables_dataGridView.Rows[n].Cells[3].Value = deliverable.Name;
+                var n = Deliverables_dataGridView.Rows.Add();
+                Deliverables_dataGridView.Rows[n].Cells[0].Value = deliverable.Quantity;
+                Deliverables_dataGridView.Columns[0].Width = 30;
+                Deliverables_dataGridView.Rows[n].Cells[1].Value = deliverable.Complexity;
+                Deliverables_dataGridView.Columns[1].Width = deliverable.Complexity.Length * 8;
+                Deliverables_dataGridView.Rows[n].Cells[2].Value = deliverable.MediaType;
+                Deliverables_dataGridView.Columns[2].Width = deliverable.MediaType.Length * 8;
+                Deliverables_dataGridView.Rows[n].Cells[3].Value = deliverable.Name;
             }
         }
 
         public void AddUpdatesToGrid()
         {
             updates_dataGridView.Rows.Clear();
-            foreach (Update update in CurrentProject.Updates)
+            foreach (var update in CurrentProject.Updates)
             {
-                int n = updates_dataGridView.Rows.Add();
+                var n = updates_dataGridView.Rows.Add();
                 updates_dataGridView.Rows[n].Cells[0].Value = update.Time.Time;
                 updates_dataGridView.Rows[n].Cells[1].Value = update.Note;
                 updates_dataGridView.Rows[n].Cells[2].Value = update.Time.StampType;
@@ -279,9 +367,9 @@ namespace Project_Management_Utility_2._0
         public void AddAssociatesToGrid()
         {
             associates_dataGridView.Rows.Clear();
-            foreach (Associate associate in CurrentProject.Associates)
+            foreach (var associate in CurrentProject.Associates)
             {
-                int n = associates_dataGridView.Rows.Add();
+                var n = associates_dataGridView.Rows.Add();
                 associates_dataGridView.Rows[n].Cells[0].Value = associate.Name;
                 associates_dataGridView.Rows[n].Cells[1].Value = associate.Email;
                 associates_dataGridView.Rows[n].Cells[2].Value = associate.Role;
@@ -293,19 +381,19 @@ namespace Project_Management_Utility_2._0
             projects_dataGridView.Rows.Clear();
             ProjectCollection.Clear();
             //string[] projectList = new string[Directory.GetFiles(SavePath).Length];
-            string[] projectList = new string[100]; // this is hacky, but it breaks if you do it like above.
+            var projectList = new string[100]; // this is hacky, but it breaks if you do it like above.
             projectList = Directory.GetFiles(SavePath);
 
             foreach (var path in projectList)
             {
-                string json = File.ReadAllText(path);
+                var json = File.ReadAllText(path);
                 var p = JsonConvert.DeserializeObject<Project>(json);
                 ProjectCollection.Add(p);
             }
 
-            foreach (Project project in ProjectCollection)
+            foreach (var project in ProjectCollection)
             {
-                int n = projects_dataGridView.Rows.Add();
+                var n = projects_dataGridView.Rows.Add();
                 projects_dataGridView.Rows[n].Cells[0].Value = project.Department;
                 projects_dataGridView.Columns[0].Width = 50;
                 projects_dataGridView.Rows[n].Cells[1].Value = project.CourseNumber;
@@ -317,10 +405,6 @@ namespace Project_Management_Utility_2._0
                 projects_dataGridView.Rows[n].Cells[5].Value = project.Term;
                 projects_dataGridView.Columns[5].Width = 30;
             }
-            
-
-
-
         }
 
         public void ChangeStatusColors(string str)
@@ -365,45 +449,50 @@ namespace Project_Management_Utility_2._0
                     break;
             }
         }
+
         #endregion
 
         #region Adding Objects to Project
-
 
         private void AddDeliverable_btn_Click(object sender, EventArgs e)
         {
             AddDeliverable();
         }
+
         private void AddLink_btn_Click(object sender, EventArgs e)
         {
             AddLink();
         }
+
         private void AddUpdate_btn_Click(object sender, EventArgs e)
         {
             AddUpdate();
         }
+
         private void AddAssociate_btn_Click(object sender, EventArgs e)
         {
             AddAssociate();
         }
+
         private void Button3_Click(object sender, EventArgs e)
         {
             BrowseForSavePath();
         }
+
         private void Button6_Click(object sender, EventArgs e)
         {
             SaveProject();
         }
+
         private void Button8_Click(object sender, EventArgs e)
         {
             NewProject();
         }
 
-
-
         #endregion
 
         #region Form Field Functions
+
         private void ProjectStatus_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             CurrentProject.Status = projectStatus_comboBox.Text;
@@ -469,101 +558,48 @@ namespace Project_Management_Utility_2._0
 
         #endregion
 
-        private void Button16_Click(object sender, EventArgs e) 
-        {
-            BrowseForSavePath();
-        }
-
-        private void Button17_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog())
-            {
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    string json = File.ReadAllText(SavePath + "\\" + ofd.SafeFileName);
-                    Project p = JsonConvert.DeserializeObject<Project>(json);
-                    LoadProject(p);
-                }
-            }
-        }
-
-
-        private void projects_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Deliverables_dataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.projects_dataGridView.Rows[e.RowIndex];
-                string projectName = row.Cells[2].Value.ToString();
-                foreach (Project project in ProjectCollection)
-                {
-                    if (projectName == project.Name)
+                var row = Deliverables_dataGridView.Rows[e.RowIndex];
+                var name = row.Cells[3].Value.ToString();
+                foreach (var deliverable in CurrentProject.Deliverables)
+                    if (name == deliverable.Name)
                     {
-                        LoadProject(project);
-                    }
-                }
-            }
-        }
-
-
-        private void Button19_Click(object sender, EventArgs e)
-        {
-            int index = links_dataGridView.CurrentRow.Index;
-            
-            var str = links_dataGridView.Rows[index].Cells[0].Value.ToString();
-
-            foreach (DataGridViewRow row in links_dataGridView.SelectedRows)
-            {
-                if(!row.IsNewRow) links_dataGridView.Rows.Remove(row);
-            }
-
-            CurrentProject.RemoveLink(str);
-        }
-
-
-
-
-
-        
-
-        private void Links_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.links_dataGridView.Rows[e.RowIndex];
-                string URL = row.Cells[0].Value.ToString();
-                foreach (Link link in CurrentProject.Links)
-                {
-                    if (URL == link.Url)
-                    {
-                        tempURL = link.Url;
-                        tempLinkType = link.LinkType;
-                        tempNote = link.Note;
-                        TempLink = link;
-                        using (var linkForm = new LinkForm())
+                        tempDeliverableName = deliverable.Name;
+                        tempDeliverableDescription = deliverable.Description;
+                        tempDeliverablePriority = deliverable.Priority;
+                        tempDeliverableMediaType = deliverable.MediaType;
+                        tempDeliverableStatus = deliverable.Status;
+                        tempDeliverableQuantity = deliverable.Quantity;
+                        tempDeliverableComplexity = deliverable.Complexity;
+                        tempDeliverableAccessibility = deliverable.Accessibility;
+                        tempDeliverableTeamResponsible = deliverable.TeamResponsible;
+                        foreach (Timestamp timestamp in deliverable.Timestamps)
                         {
-                            if (linkForm.ShowDialog() == DialogResult.OK)
+                            tempDeliverableTimestamps.Add(timestamp);
+                        }
+                        foreach (Link link in deliverable.DeliverableLinks)
+                        {
+                            tempDeliverableLinks.Add(link);
+                        }
+
+                        
+
+                        using (var deliverableForm = new DeliverableForm())
+                        {
+                            if (deliverableForm.ShowDialog() == DialogResult.OK)
                             {
                                 //TempLink = new Link(tempURL, tempLinkType, tempNote);
-                                
-
                             }
-
-                            
-
                         }
                     }
-                }
-                CurrentProject.SwapLink(TempLink, tempURL, tempLinkType, tempNote);
-                AddLinksToGrid();
-                ResetLinkDetails();
-            }
-        }
 
-        public void ResetLinkDetails()
-        {
-            tempURL = "Enter URL";
-            tempLinkType = "Select Type of Link";
-            tempNote = "Enter any details";
+                CurrentProject.SwapLink(TempLink, tempURL, tempLinkType, tempNote);
+                AddDeliverablesToGrid();
+                ResetDeliverableDetails();
+            }
         }
     }
 }

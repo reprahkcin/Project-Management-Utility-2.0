@@ -53,7 +53,7 @@
             this.projectID_displayText = new System.Windows.Forms.Label();
             this.term_textBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.deliverables_dataGridView = new System.Windows.Forms.DataGridView();
+            this.Deliverables_dataGridView = new System.Windows.Forms.DataGridView();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workDuration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mediaType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,7 +121,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.associates_dataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deliverables_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Deliverables_dataGridView)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.links_dataGridView)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -251,7 +251,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.deliverables_dataGridView);
+            this.groupBox2.Controls.Add(this.Deliverables_dataGridView);
             this.groupBox2.Controls.Add(this.addDeliverable_btn);
             this.groupBox2.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -262,29 +262,30 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Deliverables";
             // 
-            // deliverables_dataGridView
+            // Deliverables_dataGridView
             // 
-            this.deliverables_dataGridView.AllowUserToAddRows = false;
+            this.Deliverables_dataGridView.AllowUserToAddRows = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.deliverables_dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.deliverables_dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.deliverables_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.deliverables_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Deliverables_dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.Deliverables_dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Deliverables_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Deliverables_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.quantity,
             this.workDuration,
             this.mediaType,
             this.name});
-            this.deliverables_dataGridView.Location = new System.Drawing.Point(6, 26);
-            this.deliverables_dataGridView.Name = "deliverables_dataGridView";
-            this.deliverables_dataGridView.ReadOnly = true;
+            this.Deliverables_dataGridView.Location = new System.Drawing.Point(6, 26);
+            this.Deliverables_dataGridView.Name = "Deliverables_dataGridView";
+            this.Deliverables_dataGridView.ReadOnly = true;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.deliverables_dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.deliverables_dataGridView.RowTemplate.Height = 20;
-            this.deliverables_dataGridView.Size = new System.Drawing.Size(861, 220);
-            this.deliverables_dataGridView.TabIndex = 30;
+            this.Deliverables_dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.Deliverables_dataGridView.RowTemplate.Height = 20;
+            this.Deliverables_dataGridView.Size = new System.Drawing.Size(861, 220);
+            this.Deliverables_dataGridView.TabIndex = 30;
+            this.Deliverables_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Deliverables_dataGridView_CellContentClick_1);
             // 
             // quantity
             // 
@@ -1063,7 +1064,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.associates_dataGridView)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.deliverables_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Deliverables_dataGridView)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.links_dataGridView)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -1094,7 +1095,7 @@
         private System.Windows.Forms.TextBox courseNumber_textBox;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.DataGridView associates_dataGridView;
-        private System.Windows.Forms.DataGridView deliverables_dataGridView;
+        private System.Windows.Forms.DataGridView Deliverables_dataGridView;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView links_dataGridView;
         private System.Windows.Forms.Button addLink_btn;
