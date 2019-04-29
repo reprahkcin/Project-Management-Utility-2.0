@@ -10,6 +10,30 @@ namespace Project_Management_Utility_2._0
             DeliverableLinks = new List<Link>();
         }
 
+        public Deliverable(string name, string description, string priority, string mediaType, string status, string quantity, string complexity, string accessibility, string teamResponsible, List<Timestamp> timestamps, List<Link> links)
+        {
+            Name = name;
+            Description = description;
+            Priority = Priority;
+            MediaType = mediaType;
+            Status = status;
+            Quantity = quantity;
+            Complexity = complexity;
+            Accessibility = accessibility;
+            TeamResponsible = teamResponsible;
+            Timestamps = new List<Timestamp>();
+            foreach (Timestamp timestamp in timestamps)
+            {
+                Timestamps.Add(timestamp);
+            }
+            DeliverableLinks = new List<Link>();
+            foreach (Link link in links)
+            {
+                DeliverableLinks.Add(link);
+            }
+            
+        }
+
         public string Name { get; set; }
 
         public string Description { get; set; }

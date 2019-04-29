@@ -1014,6 +1014,7 @@
             this.button18.TabIndex = 51;
             this.button18.Text = "button18";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.Button18_Click);
             // 
             // MainForm
             // 

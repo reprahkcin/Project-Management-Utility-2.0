@@ -27,6 +27,7 @@ namespace Project_Management_Utility_2._0
         public static string tempDeliverableTeamResponsible = "Select team";
         public static List<Timestamp> tempDeliverableTimestamps = new List<Timestamp>();
         public static List<Link> tempDeliverableLinks = new List<Link>();
+        public static Deliverable TempDeliverable;
 
         
         public Project CurrentProject; //Create the home for everything currently on-screen, will be overwritten 
@@ -268,33 +269,7 @@ namespace Project_Management_Utility_2._0
         }
 
 
-        private void Links_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                var row = links_dataGridView.Rows[e.RowIndex];
-                var URL = row.Cells[0].Value.ToString();
-                foreach (var link in CurrentProject.Links)
-                    if (URL == link.Url)
-                    {
-                        tempURL = link.Url;
-                        tempLinkType = link.LinkType;
-                        tempNote = link.Note;
-                        TempLink = link;
-                        using (var linkForm = new LinkForm())
-                        {
-                            if (linkForm.ShowDialog() == DialogResult.OK)
-                            {
-                                //TempLink = new Link(tempURL, tempLinkType, tempNote);
-                            }
-                        }
-                    }
 
-                CurrentProject.SwapLink(TempLink, tempURL, tempLinkType, tempNote);
-                AddLinksToGrid();
-                ResetLinkDetails();
-            }
-        }
 
         public void ResetLinkDetails()
         {
@@ -557,15 +532,41 @@ namespace Project_Management_Utility_2._0
         }
 
         #endregion
+        private void Links_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var row = links_dataGridView.Rows[e.RowIndex];
+                var URL = row.Cells[0].Value.ToString();
+                foreach (var link in CurrentProject.Links)
+                    if (URL == link.Url)
+                    {
+                        tempURL = link.Url;
+                        tempLinkType = link.LinkType;
+                        tempNote = link.Note;
+                        TempLink = link;
+                        using (var linkForm = new LinkForm())
+                        {
+                            if (linkForm.ShowDialog() == DialogResult.OK)
+                            {
+                                //TempLink = new Link(tempURL, tempLinkType, tempNote);
+                            }
+                        }
+                    }
 
+                CurrentProject.SwapLink(TempLink, tempURL, tempLinkType, tempNote);
+                AddLinksToGrid();
+                ResetLinkDetails();
+            }
+        }
         private void Deliverables_dataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 var row = Deliverables_dataGridView.Rows[e.RowIndex];
-                var name = row.Cells[3].Value.ToString();
+                var deliverableName = row.Cells[3].Value.ToString();
                 foreach (var deliverable in CurrentProject.Deliverables)
-                    if (name == deliverable.Name)
+                    if (deliverableName == deliverable.Name)
                     {
                         tempDeliverableName = deliverable.Name;
                         tempDeliverableDescription = deliverable.Description;
@@ -576,6 +577,7 @@ namespace Project_Management_Utility_2._0
                         tempDeliverableComplexity = deliverable.Complexity;
                         tempDeliverableAccessibility = deliverable.Accessibility;
                         tempDeliverableTeamResponsible = deliverable.TeamResponsible;
+                        TempDeliverable = deliverable;
                         foreach (Timestamp timestamp in deliverable.Timestamps)
                         {
                             tempDeliverableTimestamps.Add(timestamp);
@@ -591,15 +593,20 @@ namespace Project_Management_Utility_2._0
                         {
                             if (deliverableForm.ShowDialog() == DialogResult.OK)
                             {
-                                //TempLink = new Link(tempURL, tempLinkType, tempNote);
+                                
                             }
                         }
                     }
 
-                CurrentProject.SwapLink(TempLink, tempURL, tempLinkType, tempNote);
+                CurrentProject.SwapDeliverable(TempDeliverable, tempDeliverableName, tempDeliverableDescription, tempDeliverablePriority, tempDeliverableMediaType, tempDeliverableStatus, tempDeliverableQuantity, tempDeliverableComplexity, tempDeliverableAccessibility, tempDeliverableTeamResponsible, tempDeliverableTimestamps, tempDeliverableLinks);
                 AddDeliverablesToGrid();
-                ResetDeliverableDetails();
+                //ResetDeliverableDetails();
             }
+        }
+
+        private void Button18_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

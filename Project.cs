@@ -58,6 +58,11 @@ namespace Project_Management_Utility_2._0
             Links[Links.FindIndex(ind => ind.Equals(oldLink))] = new Link(newUrl, newLinkType, newNote);
         }
         // You need to figure out the constructor function in deliverable class
-        //public void SwapDeliverable(Deliverable oldDeliverable, string)
+        public void SwapDeliverable(Deliverable oldDeliverable, string newName, string newDescription,
+            string newPriority, string newMediaType, string newStatus, string newQuantity, string newComplexity,
+            string newAccessibility, string newTeamResponsible, List<Timestamp> newTimestamps, List<Link> newLinks)
+        {
+            Deliverables[Deliverables.FindIndex(ind => ind.Equals(oldDeliverable))] = new Deliverable(newName, newDescription, newPriority, newMediaType, newStatus, newQuantity, newComplexity, newAccessibility, newTeamResponsible, newTimestamps, newLinks);
+        }
     }
 }

@@ -1,13 +1,22 @@
 ﻿using System;
 using System.Windows.Forms;
+using static Project_Management_Utility_2._0.MainForm;
 
 namespace Project_Management_Utility_2._0
 {
     public partial class DeliverableForm : Form
     {
+        private readonly Deliverable _deliverableToEdit = new Deliverable(tempDeliverableName,tempDeliverableDescription,tempDeliverablePriority,tempDeliverableMediaType,tempDeliverableStatus,tempDeliverableQuantity,tempDeliverableComplexity,tempDeliverableAccessibility,tempDeliverableTeamResponsible,tempDeliverableTimestamps,tempDeliverableLinks);
+
         public DeliverableForm()
         {
             InitializeComponent();
+        }
+
+        public DeliverableForm(Deliverable d)
+        {
+            InitializeComponent();
+            _deliverableToEdit = d;
         }
 
         public string DeliverableName
